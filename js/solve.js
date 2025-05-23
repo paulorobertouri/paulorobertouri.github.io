@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cameraVideo = document.getElementById("cameraVideo");
   const cameraCanvas = document.getElementById("cameraCanvas");
   const btnCapture = document.getElementById("btnCapture");
+  const cameraSelect = document.getElementById("cameraSelect");
   let cameraStream = null;
 
   requestSystem.value = defaultSystem;
@@ -88,14 +89,46 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCamera.addEventListener("click", async () => {
     const modal = new bootstrap.Modal(cameraModal);
     modal.show();
+    // List cameras
+    cameraSelect.innerHTML = "<option>Loading...</option>";
     try {
-      cameraStream = await navigator.mediaDevices.getUserMedia({ video: true });
-      cameraVideo.srcObject = cameraStream;
-      cameraVideo.play();
+      const devices = await navigator.mediaDevices.enumerateDevices();
+      const videoDevices = devices.filter((d) => d.kind === "videoinput");
+      cameraSelect.innerHTML = "";
+      videoDevices.forEach((device, idx) => {
+        const option = document.createElement("option");
+        option.value = device.deviceId;
+        option.text = device.label || `Camera ${idx + 1}`;
+        cameraSelect.appendChild(option);
+      });
     } catch (err) {
-      resultText.innerHTML =
-        '<span class="text-danger">Camera error: ' + err.message + "</span>";
+      cameraSelect.innerHTML = "<option>Error loading cameras</option>";
+      // Optionally, log the error for debugging
+      console.error("Error loading cameras", err);
     }
+    // Start video with selected camera
+    const startCamera = async () => {
+      if (cameraStream) {
+        cameraStream.getTracks().forEach((track) => track.stop());
+      }
+      const constraints = {
+        video: {
+          deviceId: cameraSelect.value
+            ? { exact: cameraSelect.value }
+            : undefined,
+        },
+      };
+      try {
+        cameraStream = await navigator.mediaDevices.getUserMedia(constraints);
+        cameraVideo.srcObject = cameraStream;
+        cameraVideo.play();
+      } catch (err) {
+        resultText.innerHTML =
+          '<span class="text-danger">Camera error: ' + err.message + "</span>";
+      }
+    };
+    cameraSelect.onchange = startCamera;
+    cameraSelect.onchange(); // start with first camera
   });
 
   // Capture button takes photo and processes it as image upload
