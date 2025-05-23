@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Clean up button
   btnCleanUp.addEventListener("click", () => {
-    requestSystem.value = "";
+    requestSystem.value = defaultSystem;
     requestUser.value = "";
     requestImage.value = "";
     resultText.innerHTML = "";
