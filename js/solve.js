@@ -1,5 +1,6 @@
-const defaultSystem =
-  "Please solve the problem below and explain the solution. Return only the solution and explanation.";
+const defaultSystem = `Primeiro, forneça a solução de forma concisa.
+Segundo, explique a solução passo a passo.
+Por fim, forneça um resumo da solução.`;
 
 document.addEventListener("DOMContentLoaded", () => {
   ////////////////////////////////////////////////////////////////
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   model.value = config.model;
   temperature.value = config.temperature;
   maxTokens.value = config.maxTokens;
+  openAiKey.setAttribute("autocomplete", "off"); // Prevent browser from storing API key
 
   if (config.key) {
     const collapse = new bootstrap.Collapse(panelConfigBody, {
@@ -28,6 +30,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Save config
   btnSave.addEventListener("click", () => {
+    if (!openAiKey.value.startsWith("sk-")) {
+      openAiKey.classList.add("is-invalid");
+      openAiKey.focus();
+      return;
+    } else {
+      openAiKey.classList.remove("is-invalid");
+    }
     saveConfig(
       openAiKey.value,
       model.value,
@@ -56,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnCapture = document.getElementById("btnCapture");
   const btnSelfie = document.getElementById("btnSelfie");
   const btnPhoto = document.getElementById("btnPhoto");
+  const processingModal = document.getElementById("processingModal");
   let cameraStream = null;
 
   requestSystem.value = defaultSystem;
@@ -67,6 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const reader = new FileReader();
     reader.onload = async function (evt) {
       const base64 = evt.target.result;
+      const modal = new bootstrap.Modal(processingModal);
+      modal.show();
       resultText.innerHTML =
         '<span class="text-secondary">Extracting text from image...</span>';
       try {
@@ -84,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
       } catch (err) {
         resultText.innerHTML =
           '<span class="text-danger">' + err.message + "</span>";
+      } finally {
+        const modalInstance = bootstrap.Modal.getInstance(processingModal);
+        if (modalInstance) modalInstance.hide();
       }
     };
     reader.readAsDataURL(file);
@@ -147,6 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = bootstrap.Modal.getInstance(cameraModal);
     modal.hide();
     // Process as if uploaded
+    const processing = new bootstrap.Modal(processingModal);
+    processing.show();
     resultText.innerHTML =
       '<span class="text-secondary">Extracting text from camera image...</span>';
     extractTextFromImage(openAiKey.value, base64, model.value)
@@ -160,6 +177,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => {
         resultText.innerHTML =
           '<span class="text-danger">' + err.message + "</span>";
+      })
+      .finally(() => {
+        const modalInstance = bootstrap.Modal.getInstance(processingModal);
+        if (modalInstance) modalInstance.hide();
       });
   });
 
@@ -174,6 +195,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Solve button
   btnSolve.addEventListener("click", async () => {
+    if (!openAiKey.value.startsWith("sk-")) {
+      openAiKey.classList.add("is-invalid");
+      openAiKey.focus();
+      resultText.innerHTML =
+        '<span class="text-danger">Chave de API inválida.</span>';
+      return;
+    } else {
+      openAiKey.classList.remove("is-invalid");
+    }
+    if (!requestUser.value.trim()) {
+      requestUser.classList.add("is-invalid");
+      requestUser.focus();
+      resultText.innerHTML =
+        '<span class="text-danger">Prompt do usuário não pode ser vazio.</span>';
+      return;
+    } else {
+      requestUser.classList.remove("is-invalid");
+    }
+    const modal = new bootstrap.Modal(processingModal);
+    modal.show();
     resultText.innerHTML = '<span class="text-secondary">Processing...</span>';
     try {
       const text = await solveOpenAi(
@@ -188,6 +229,9 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
       resultText.innerHTML =
         '<span class="text-danger">' + err.message + "</span>";
+    } finally {
+      const modalInstance = bootstrap.Modal.getInstance(processingModal);
+      if (modalInstance) modalInstance.hide();
     }
   });
 

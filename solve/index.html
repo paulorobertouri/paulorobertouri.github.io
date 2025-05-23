@@ -41,6 +41,9 @@
                   class="form-control"
                   id="openAiKey"
                   placeholder="sk-..."
+                  autocomplete="off"
+                  aria-label="OpenAI Key"
+                  required
                 />
               </div>
               <div class="mb-2">
@@ -53,6 +56,8 @@
                   min="0"
                   max="1.2"
                   value="0"
+                  aria-label="Temperature"
+                  required
                 />
               </div>
               <div class="mb-2">
@@ -65,11 +70,13 @@
                   step="1024"
                   max="40960"
                   value="4096"
+                  aria-label="Max Tokens"
+                  required
                 />
               </div>
               <div class="mb-2">
                 <label for="model" class="form-label">Model</label>
-                <select class="form-select" id="model">
+                <select class="form-select" id="model" aria-label="Model">
                   <option value="gpt-4.1">gpt-4.1</option>
                   <option value="gpt-4.1-mini">gpt-4.1-mini</option>
                   <option value="gpt-4.1-nano">gpt-4.1-nano</option>
@@ -91,8 +98,9 @@
                 <textarea
                   class="form-control"
                   id="requestSystem"
-                  rows="2"
+                  rows="3"
                   placeholder="Response system prompt..."
+                  aria-label="System prompt"
                 >
                 </textarea>
               </div>
@@ -103,6 +111,8 @@
                   id="requestUser"
                   rows="3"
                   placeholder="User prompt..."
+                  aria-label="User prompt"
+                  required
                 ></textarea>
               </div>
               <div class="mb-2">
@@ -114,6 +124,7 @@
                     id="requestImage"
                     accept="image/*"
                     camera="environment"
+                    aria-label="Upload image"
                   />
                   <button
                     class="btn btn-outline-secondary"
@@ -190,6 +201,28 @@
                   </div>
                 </div>
               </div>
+              <!-- Processing Modal -->
+              <div
+                class="modal fade"
+                id="processingModal"
+                tabindex="-1"
+                aria-labelledby="processingModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content bg-dark text-white text-center">
+                    <div class="modal-body">
+                      <div class="py-4">
+                        <output
+                          class="spinner-border text-primary mb-3"
+                          aria-busy="true"
+                        ></output>
+                        <h5 id="processingModalLabel">Processing...</h5>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="mb-2 d-flex gap-2">
                 <button class="btn btn-primary flex-fill" id="btnSolve">
                   <i class="fas fa-play"></i> Solve
@@ -207,6 +240,7 @@
                   class="border rounded p-2 bg-white"
                   id="resultText"
                   style="min-height: 80px"
+                  aria-live="polite"
                 ></div>
               </div>
             </div>
