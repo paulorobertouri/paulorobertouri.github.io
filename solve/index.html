@@ -106,12 +106,71 @@
               </div>
               <div class="mb-3">
                 <label for="requestImage" class="form-label">Image</label>
-                <input
-                  class="form-control"
-                  type="file"
-                  id="requestImage"
-                  accept="image/*"
-                />
+                <div class="input-group">
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="requestImage"
+                    accept="image/*"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                    id="btnCamera"
+                  >
+                    <i class="fas fa-camera"></i> Camera
+                  </button>
+                </div>
+              </div>
+              <!-- Camera Modal -->
+              <div
+                class="modal fade"
+                id="cameraModal"
+                tabindex="-1"
+                aria-labelledby="cameraModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="cameraModalLabel">
+                        Take a Photo
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body text-center">
+                      <video
+                        id="cameraVideo"
+                        width="100%"
+                        autoplay
+                        playsinline
+                        style="max-width: 100%; border-radius: 8px"
+                      ></video>
+                      <canvas id="cameraCanvas" style="display: none"></canvas>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="btnCapture"
+                      >
+                        Capture
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="mb-3 d-flex gap-2">
                 <button class="btn btn-primary flex-fill" id="btnSolve">

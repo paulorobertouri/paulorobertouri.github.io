@@ -46,6 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSolve = document.getElementById("btnSolve");
   const btnCleanUp = document.getElementById("btnCleanUp");
   const resultText = document.getElementById("resultText");
+  const btnCamera = document.getElementById("btnCamera");
+  const cameraModal = document.getElementById("cameraModal");
+  const cameraVideo = document.getElementById("cameraVideo");
+  const cameraCanvas = document.getElementById("cameraCanvas");
+  const btnCapture = document.getElementById("btnCapture");
+  let cameraStream = null;
 
   requestSystem.value = defaultSystem;
 
@@ -76,6 +82,61 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
     reader.readAsDataURL(file);
+  });
+
+  // Camera button opens modal and starts video
+  btnCamera.addEventListener("click", async () => {
+    const modal = new bootstrap.Modal(cameraModal);
+    modal.show();
+    try {
+      cameraStream = await navigator.mediaDevices.getUserMedia({ video: true });
+      cameraVideo.srcObject = cameraStream;
+      cameraVideo.play();
+    } catch (err) {
+      resultText.innerHTML =
+        '<span class="text-danger">Camera error: ' + err.message + "</span>";
+    }
+  });
+
+  // Capture button takes photo and processes it as image upload
+  btnCapture.addEventListener("click", () => {
+    if (!cameraStream) return;
+    const video = cameraVideo;
+    const canvas = cameraCanvas;
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+    const base64 = canvas.toDataURL("image/png");
+    // Stop camera
+    cameraStream.getTracks().forEach((track) => track.stop());
+    cameraStream = null;
+    // Hide modal
+    const modal = bootstrap.Modal.getInstance(cameraModal);
+    modal.hide();
+    // Process as if uploaded
+    resultText.innerHTML =
+      '<span class="text-secondary">Extracting text from camera image...</span>';
+    extractTextFromImage(openAiKey.value, base64, model.value)
+      .then((text) => {
+        requestUser.value = text;
+        requestUser.style.height = "auto";
+        requestUser.style.height = requestUser.scrollHeight + "px";
+        resultText.innerHTML =
+          '<span class="text-success">Text extracted to User field.</span>';
+      })
+      .catch((err) => {
+        resultText.innerHTML =
+          '<span class="text-danger">' + err.message + "</span>";
+      });
+  });
+
+  // Stop camera when modal closes
+  cameraModal.addEventListener("hidden.bs.modal", () => {
+    if (cameraStream) {
+      cameraStream.getTracks().forEach((track) => track.stop());
+      cameraStream = null;
+    }
+    cameraVideo.srcObject = null;
   });
 
   // Solve button
