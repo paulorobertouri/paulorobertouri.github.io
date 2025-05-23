@@ -51,6 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const cameraVideo = document.getElementById("cameraVideo");
   const cameraCanvas = document.getElementById("cameraCanvas");
   const btnCapture = document.getElementById("btnCapture");
+  const btnSelfie = document.getElementById("btnSelfie");
+  const btnPhoto = document.getElementById("btnPhoto");
   let cameraStream = null;
 
   requestSystem.value = defaultSystem;
@@ -88,25 +90,42 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCamera.addEventListener("click", async () => {
     const modal = new bootstrap.Modal(cameraModal);
     modal.show();
-    // Get camera stream
-    try {
-      try {
-        cameraStream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: { exact: "environment" } },
-        });
-      } catch {
-        cameraStream = await navigator.mediaDevices.getUserMedia({
-          video: { facingMode: "user" },
-        });
+    let facingMode = "environment";
+    // Start video with selected facing mode
+    const startCamera = async () => {
+      if (cameraStream) {
+        cameraStream.getTracks().forEach((track) => track.stop());
       }
-      cameraVideo.srcObject = cameraStream;
-      cameraVideo.play();
-    } catch (err) {
-      resultText.innerHTML =
-        '<span class="text-danger">Error accessing camera: ' +
-        err.message +
-        "</span>";
-    }
+      let constraints = { video: { facingMode: facingMode } };
+      try {
+        try {
+          cameraStream = await navigator.mediaDevices.getUserMedia(constraints);
+        } catch {
+          constraints = { video: true };
+          cameraStream = await navigator.mediaDevices.getUserMedia(constraints);
+        }
+        cameraVideo.srcObject = cameraStream;
+        cameraVideo.play();
+      } catch (err) {
+        resultText.innerHTML =
+          '<span class="text-danger">Camera error: ' + err.message + "</span>";
+      }
+    };
+    btnSelfie.onclick = () => {
+      facingMode = "user";
+      btnSelfie.classList.add("active");
+      btnPhoto.classList.remove("active");
+      startCamera();
+    };
+    btnPhoto.onclick = () => {
+      facingMode = "environment";
+      btnPhoto.classList.add("active");
+      btnSelfie.classList.remove("active");
+      startCamera();
+    };
+    btnPhoto.classList.add("active");
+    btnSelfie.classList.remove("active");
+    startCamera();
   });
 
   // Capture button takes photo and processes it as image upload

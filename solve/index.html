@@ -144,6 +144,22 @@
                       ></button>
                     </div>
                     <div class="modal-body text-center">
+                      <div class="d-flex gap-2 mb-2">
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary flex-fill"
+                          id="btnSelfie"
+                        >
+                          Selfie
+                        </button>
+                        <button
+                          type="button"
+                          class="btn btn-outline-primary flex-fill"
+                          id="btnPhoto"
+                        >
+                          Photo
+                        </button>
+                      </div>
                       <video
                         id="cameraVideo"
                         width="100%"
@@ -151,7 +167,7 @@
                         playsinline
                         style="max-width: 100%; border-radius: 8px"
                       ></video>
-                      <canvas id="cameraCanvas"></canvas>
+                      <canvas id="cameraCanvas" style="display: none"></canvas>
                     </div>
                     <div class="modal-footer">
                       <button
