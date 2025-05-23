@@ -1,6 +1,4 @@
-const defaultSystem = `Primeiro, forneça a solução de forma concisa.
-Segundo, explique a solução passo a passo.
-Por fim, forneça um resumo da solução.`;
+const defaultSystem = `Primeiro, forneça a solução de forma concisa. Segundo, explique a solução passo a passo. Por fim, forneça um resumo da solução. Retorne somente texto sem formatação.`;
 
 document.addEventListener("DOMContentLoaded", () => {
   ////////////////////////////////////////////////////////////////
@@ -14,39 +12,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnSave = document.getElementById("btnSave");
   const panelConfigBody = document.getElementById("panelConfigBody");
 
+  // Helper: Collapse Panel
+  function collapsePanel(panel) {
+    const collapse = new bootstrap.Collapse(panel, { toggle: false });
+    collapse.hide();
+  }
+
+  // Helper: Validate API Key
+  function isValidApiKey(key) {
+    return typeof key === "string" && key.startsWith("sk-");
+  }
+
+  // Helper: Set textarea height autosize
+  function autosizeTextarea(textarea) {
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+  }
+
   // Load config
-  openAiKey.value = config.key;
-  model.value = config.model;
-  temperature.value = config.temperature;
-  maxTokens.value = config.maxTokens;
+  openAiKey.value = config.key || "";
+  model.value = config.model || "";
+  temperature.value = config.temperature || "";
+  maxTokens.value = config.maxTokens || "";
   openAiKey.setAttribute("autocomplete", "off"); // Prevent browser from storing API key
 
   if (config.key) {
-    const collapse = new bootstrap.Collapse(panelConfigBody, {
-      toggle: false,
-    });
-    collapse.hide();
+    collapsePanel(panelConfigBody);
   }
 
   // Save config
   btnSave.addEventListener("click", () => {
-    if (!openAiKey.value.startsWith("sk-")) {
+    if (!isValidApiKey(openAiKey.value)) {
       openAiKey.classList.add("is-invalid");
       openAiKey.focus();
       return;
-    } else {
-      openAiKey.classList.remove("is-invalid");
     }
+    openAiKey.classList.remove("is-invalid");
     saveConfig(
       openAiKey.value,
       model.value,
       temperature.value,
       maxTokens.value
     );
-    const collapse = new bootstrap.Collapse(panelConfigBody, {
-      toggle: false,
-    });
-    collapse.hide();
+    collapsePanel(panelConfigBody);
   });
 
   ////////////////////////////////////////////////////////////////
@@ -69,6 +77,42 @@ document.addEventListener("DOMContentLoaded", () => {
   let cameraStream = null;
 
   requestSystem.value = defaultSystem;
+  autosizeTextarea(requestSystem);
+
+  // Helper: Show Modal with Message
+  function showProcessingModal(message) {
+    const modal = new bootstrap.Modal(processingModal);
+    modal.show();
+    resultText.innerHTML = `<span class="text-secondary">${message}</span>`;
+  }
+
+  // Helper: Hide Modal
+  function hideProcessingModal() {
+    const modalInstance = bootstrap.Modal.getInstance(processingModal);
+    if (modalInstance) modalInstance.hide();
+  }
+
+  // Helper: Extract Text from Image
+  async function handleExtractTextFromImage(base64, successMsg, errorMsg) {
+    showProcessingModal("Extracting text from image...");
+    try {
+      const text = await extractTextFromImage(
+        openAiKey.value,
+        base64,
+        model.value
+      );
+      requestUser.value = text;
+      autosizeTextarea(requestUser);
+      requestImage.value = "";
+      resultText.innerHTML = `<span class="text-success">${successMsg}</span>`;
+    } catch (err) {
+      resultText.innerHTML = `<span class="text-danger">${
+        errorMsg || err.message
+      }</span>`;
+    } finally {
+      hideProcessingModal();
+    }
+  }
 
   // Extract text from image
   requestImage.addEventListener("change", async (e) => {
@@ -77,29 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const reader = new FileReader();
     reader.onload = async function (evt) {
       const base64 = evt.target.result;
-      const modal = new bootstrap.Modal(processingModal);
-      modal.show();
-      resultText.innerHTML =
-        '<span class="text-secondary">Extracting text from image...</span>';
-      try {
-        const text = await extractTextFromImage(
-          openAiKey.value,
-          base64,
-          model.value
-        );
-        requestUser.value = text;
-        requestUser.style.height = "auto";
-        requestUser.style.height = requestUser.scrollHeight + "px";
-        requestImage.value = "";
-        resultText.innerHTML =
-          '<span class="text-success">Text extracted to User field.</span>';
-      } catch (err) {
-        resultText.innerHTML =
-          '<span class="text-danger">' + err.message + "</span>";
-      } finally {
-        const modalInstance = bootstrap.Modal.getInstance(processingModal);
-        if (modalInstance) modalInstance.hide();
-      }
+      await handleExtractTextFromImage(base64, "Text extracted to User field.");
     };
     reader.readAsDataURL(file);
   });
@@ -109,6 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = new bootstrap.Modal(cameraModal);
     modal.show();
     let facingMode = "environment";
+
     // Start video with selected facing mode
     const startCamera = async () => {
       if (cameraStream) {
@@ -129,6 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
           '<span class="text-danger">Camera error: ' + err.message + "</span>";
       }
     };
+
     btnSelfie.onclick = () => {
       facingMode = "user";
       btnSelfie.classList.add("active");
@@ -160,28 +184,13 @@ document.addEventListener("DOMContentLoaded", () => {
     cameraStream = null;
     // Hide modal
     const modal = bootstrap.Modal.getInstance(cameraModal);
-    modal.hide();
+    if (modal) modal.hide();
     // Process as if uploaded
-    const processing = new bootstrap.Modal(processingModal);
-    processing.show();
-    resultText.innerHTML =
-      '<span class="text-secondary">Extracting text from camera image...</span>';
-    extractTextFromImage(openAiKey.value, base64, model.value)
-      .then((text) => {
-        requestUser.value = text;
-        requestUser.style.height = "auto";
-        requestUser.style.height = requestUser.scrollHeight + "px";
-        resultText.innerHTML =
-          '<span class="text-success">Text extracted to User field.</span>';
-      })
-      .catch((err) => {
-        resultText.innerHTML =
-          '<span class="text-danger">' + err.message + "</span>";
-      })
-      .finally(() => {
-        const modalInstance = bootstrap.Modal.getInstance(processingModal);
-        if (modalInstance) modalInstance.hide();
-      });
+    handleExtractTextFromImage(
+      base64,
+      "Text extracted to User field.",
+      "Failed to extract text from camera image."
+    );
   });
 
   // Stop camera when modal closes
@@ -195,27 +204,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Solve button
   btnSolve.addEventListener("click", async () => {
-    if (!openAiKey.value.startsWith("sk-")) {
+    if (!isValidApiKey(openAiKey.value)) {
       openAiKey.classList.add("is-invalid");
       openAiKey.focus();
       resultText.innerHTML =
         '<span class="text-danger">Chave de API inválida.</span>';
       return;
-    } else {
-      openAiKey.classList.remove("is-invalid");
     }
+    openAiKey.classList.remove("is-invalid");
     if (!requestUser.value.trim()) {
       requestUser.classList.add("is-invalid");
       requestUser.focus();
       resultText.innerHTML =
         '<span class="text-danger">Prompt do usuário não pode ser vazio.</span>';
       return;
-    } else {
-      requestUser.classList.remove("is-invalid");
     }
-    const modal = new bootstrap.Modal(processingModal);
-    modal.show();
-    resultText.innerHTML = '<span class="text-secondary">Processing...</span>';
+    requestUser.classList.remove("is-invalid");
+    showProcessingModal("Processing...");
     try {
       const text = await solveOpenAi(
         openAiKey.value,
@@ -230,8 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
       resultText.innerHTML =
         '<span class="text-danger">' + err.message + "</span>";
     } finally {
-      const modalInstance = bootstrap.Modal.getInstance(processingModal);
-      if (modalInstance) modalInstance.hide();
+      hideProcessingModal();
     }
   });
 
@@ -241,13 +245,15 @@ document.addEventListener("DOMContentLoaded", () => {
     requestUser.value = "";
     requestImage.value = "";
     resultText.innerHTML = "";
+    autosizeTextarea(requestSystem);
+    autosizeTextarea(requestUser);
   });
 
   // Autosize textareas
   document.querySelectorAll("textarea").forEach((textarea) => {
     textarea.addEventListener("input", () => {
-      textarea.style.height = "auto";
-      textarea.style.height = textarea.scrollHeight + "px";
+      autosizeTextarea(textarea);
     });
+    autosizeTextarea(textarea);
   });
 });
