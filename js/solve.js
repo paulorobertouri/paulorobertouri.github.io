@@ -34,7 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
       temperature.value,
       maxTokens.value
     );
-    panelConfigBody.style.display = "none";
+    const collapse = new bootstrap.Collapse(panelConfigBody, {
+      toggle: false,
+    });
+    collapse.hide();
   });
 
   ////////////////////////////////////////////////////////////////

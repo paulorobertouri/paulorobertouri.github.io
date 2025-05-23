@@ -6,8 +6,8 @@ const STORAGE_MAX_TOKENS = "openAiMaxTokens";
 function saveConfig(key, model, temperature, maxTokens) {
   localStorage.setItem(STORAGE_KEY, key);
   localStorage.setItem(STORAGE_MODEL, model);
-  localStorage.setItem(STORAGE_TEMPERATURE, temperature);
-  localStorage.setItem(STORAGE_MAX_TOKENS, maxTokens);
+  localStorage.setItem(STORAGE_TEMPERATURE, String(temperature));
+  localStorage.setItem(STORAGE_MAX_TOKENS, String(maxTokens));
 }
 
 function loadConfig() {

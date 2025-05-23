@@ -61,9 +61,10 @@
                   type="number"
                   class="form-control"
                   id="maxTokens"
-                  min="1"
-                  max="4096"
-                  value="1000"
+                  min="1024"
+                  step="1024"
+                  max="40960"
+                  value="4096"
                 />
               </div>
               <div class="mb-2">
@@ -112,6 +113,7 @@
                     type="file"
                     id="requestImage"
                     accept="image/*"
+                    camera="environment"
                   />
                   <button
                     class="btn btn-outline-secondary"
