@@ -1,0 +1,6 @@
+textarea {
+  overflow: hidden;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+}
