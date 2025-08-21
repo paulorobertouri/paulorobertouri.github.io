@@ -25,8 +25,8 @@ const saveConfig = (key, model, temperature, maxTokens) => {
 const loadConfig = () => {
   return {
     key: localStorage.getItem(STORAGE_KEY) || "",
-    model: localStorage.getItem(STORAGE_MODEL) || "gpt-4.1-mini",
-    temperature: parseFloat(localStorage.getItem(STORAGE_TEMPERATURE)) || 0.7,
+    model: localStorage.getItem(STORAGE_MODEL) || "gpt-5-mini",
+    temperature: parseFloat(localStorage.getItem(STORAGE_TEMPERATURE)) || 0.4,
     maxTokens: parseInt(localStorage.getItem(STORAGE_MAX_TOKENS), 10) || 4096,
   };
 };
