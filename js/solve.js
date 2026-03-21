@@ -1,4 +1,4 @@
-const defaultSystem = `Primeiro, forneça a solução de forma concisa. Segundo, explique a solução passo a passo. Por fim, forneça um resumo da solução. Retorne somente texto sem formatação.`;
+const defaultSystem = `First, provide the solution concisely. Second, explain the solution step by step. Finally, provide a short summary of the solution. Return plain text only, without formatting.`;
 
 document.addEventListener("DOMContentLoaded", () => {
   ////////////////////////////////////////////////////////////////
@@ -75,6 +75,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnPhoto = document.getElementById("btnPhoto");
   const processingModal = document.getElementById("processingModal");
   let cameraStream = null;
+
+    const btnCopy = document.getElementById("btnCopy");
+
+    // Helper: Render result with Markdown
+    function renderResult(text) {
+      resultText.innerHTML =
+        typeof marked !== "undefined" ? marked.parse(text) : text.replace(/\n/g, "<br>");
+      btnCopy.style.display = "inline-block";
+      btnCopy._rawText = text;
+    }
+
+    // Copy result to clipboard
+    btnCopy.addEventListener("click", () => {
+      const text = btnCopy._rawText || resultText.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btnCopy.innerHTML;
+        btnCopy.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        setTimeout(() => { btnCopy.innerHTML = orig; }, 1500);
+      });
+    });
 
   requestSystem.value = defaultSystem;
   autosizeTextarea(requestSystem);
@@ -208,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
       openAiKey.classList.add("is-invalid");
       openAiKey.focus();
       resultText.innerHTML =
-        '<span class="text-danger">Chave de API inválida.</span>';
+        '<span class="text-danger">Invalid API key.</span>';
       return;
     }
     openAiKey.classList.remove("is-invalid");
@@ -216,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
       requestUser.classList.add("is-invalid");
       requestUser.focus();
       resultText.innerHTML =
-        '<span class="text-danger">Prompt do usuário não pode ser vazio.</span>';
+        '<span class="text-danger">User prompt cannot be empty.</span>';
       return;
     }
     requestUser.classList.remove("is-invalid");
@@ -230,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
         parseFloat(temperature.value),
         parseInt(maxTokens.value, 10)
       );
-      resultText.innerText = text;
+        renderResult(text);
     } catch (err) {
       resultText.innerHTML =
         '<span class="text-danger">' + err.message + "</span>";
@@ -245,6 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestUser.value = "";
     requestImage.value = "";
     resultText.innerHTML = "";
+      btnCopy.style.display = "none";
     autosizeTextarea(requestSystem);
     autosizeTextarea(requestUser);
   });

@@ -1,16 +1,16 @@
 const isValidApiKey = (key) => typeof key === "string" && key.startsWith("sk-");
 
-const defaultTextFromImage = `Você é um assistente de IA que extrai texto de imagens.
-Você deve responder apenas com o texto da imagem, sem formatação ou explicações adicionais.
-Se o texto apresentar questões e alternativas, retorne apenas as questões que estiverem completas.
-Ignore textos que não parecem fazer parte da questões e alternativas.
-Se houver mais de uma questão, retorne apenas a primeira.
-Se não houver texto na imagem, descreva o que você vê na imagem.`;
+const defaultTextFromImage = `You are an AI assistant that extracts text from images.
+You must respond only with the text from the image, without formatting or additional explanations.
+If the text contains questions and answer options, return only questions that are complete.
+Ignore text that does not appear to be part of the questions and options.
+If there is more than one question, return only the first one.
+If there is no text in the image, describe what you see in the image.`;
 
 async function extractTextFromImage(apiKey, imageBase64, model = "gpt-4o") {
-  if (!isValidApiKey(apiKey)) throw new Error("Chave de API inválida");
+  if (!isValidApiKey(apiKey)) throw new Error("Invalid API key");
   if (!imageBase64 || typeof imageBase64 !== "string")
-    throw new Error("Imagem inválida");
+    throw new Error("Invalid image");
   const url = "https://api.openai.com/v1/chat/completions";
   const body = {
     model,
@@ -34,7 +34,7 @@ async function extractTextFromImage(apiKey, imageBase64, model = "gpt-4o") {
     },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error("Erro ao extrair texto da imagem");
+  if (!res.ok) throw new Error("Error extracting text from image");
   const data = await res.json();
   return data.choices?.[0]?.message?.content || "";
 }
@@ -47,9 +47,9 @@ async function solveOpenAi(
   temperature,
   maxTokens
 ) {
-  if (!isValidApiKey(apiKey)) throw new Error("Chave de API inválida");
+  if (!isValidApiKey(apiKey)) throw new Error("Invalid API key");
   if (!user || typeof user !== "string")
-    throw new Error("Prompt do usuário inválido");
+    throw new Error("Invalid user prompt");
   const url = "https://api.openai.com/v1/chat/completions";
   const body = {
     model,
@@ -68,7 +68,7 @@ async function solveOpenAi(
     },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error("Erro ao consultar OpenAI");
+  if (!res.ok) throw new Error("Error querying OpenAI");
   const data = await res.json();
   return data.choices?.[0]?.message?.content || "";
 }
