@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       openAiKey.value,
       model.value,
       temperature.value,
-      maxTokens.value
+      maxTokens.value,
     );
     collapsePanel(panelConfigBody);
   });
@@ -76,25 +76,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const processingModal = document.getElementById("processingModal");
   let cameraStream = null;
 
-    const btnCopy = document.getElementById("btnCopy");
+  const btnCopy = document.getElementById("btnCopy");
 
-    // Helper: Render result with Markdown
-    function renderResult(text) {
-      resultText.innerHTML =
-        typeof marked !== "undefined" ? marked.parse(text) : text.replace(/\n/g, "<br>");
-      btnCopy.style.display = "inline-block";
-      btnCopy._rawText = text;
-    }
+  // Helper: Render result with Markdown
+  function renderResult(text) {
+    resultText.innerHTML =
+      typeof marked !== "undefined"
+        ? marked.parse(text)
+        : text.replace(/\n/g, "<br>");
+    btnCopy.style.display = "inline-block";
+    btnCopy._rawText = text;
+  }
 
-    // Copy result to clipboard
-    btnCopy.addEventListener("click", () => {
-      const text = btnCopy._rawText || resultText.innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        const orig = btnCopy.innerHTML;
-        btnCopy.innerHTML = '<i class="fas fa-check"></i> Copied!';
-        setTimeout(() => { btnCopy.innerHTML = orig; }, 1500);
-      });
+  // Copy result to clipboard
+  btnCopy.addEventListener("click", () => {
+    const text = btnCopy._rawText || resultText.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btnCopy.innerHTML;
+      btnCopy.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      setTimeout(() => {
+        btnCopy.innerHTML = orig;
+      }, 1500);
     });
+  });
 
   requestSystem.value = defaultSystem;
   autosizeTextarea(requestSystem);
@@ -119,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const text = await extractTextFromImage(
         openAiKey.value,
         base64,
-        model.value
+        model.value,
       );
       requestUser.value = text;
       autosizeTextarea(requestUser);
@@ -209,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleExtractTextFromImage(
       base64,
       "Text extracted to User field.",
-      "Failed to extract text from camera image."
+      "Failed to extract text from camera image.",
     );
   });
 
@@ -248,9 +252,9 @@ document.addEventListener("DOMContentLoaded", () => {
         requestSystem.value,
         requestUser.value,
         parseFloat(temperature.value),
-        parseInt(maxTokens.value, 10)
+        parseInt(maxTokens.value, 10),
       );
-        renderResult(text);
+      renderResult(text);
     } catch (err) {
       resultText.innerHTML =
         '<span class="text-danger">' + err.message + "</span>";
@@ -265,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestUser.value = "";
     requestImage.value = "";
     resultText.innerHTML = "";
-      btnCopy.style.display = "none";
+    btnCopy.style.display = "none";
     autosizeTextarea(requestSystem);
     autosizeTextarea(requestUser);
   });

@@ -7,7 +7,11 @@ Ignore text that does not appear to be part of the questions and options.
 If there is more than one question, return only the first one.
 If there is no text in the image, describe what you see in the image.`;
 
-async function extractTextFromImage(apiKey, imageBase64, model = "gpt-4o") {
+async function extractTextFromImage(
+  apiKey,
+  imageBase64,
+  model = "gpt-5.4-mini",
+) {
   if (!isValidApiKey(apiKey)) throw new Error("Invalid API key");
   if (!imageBase64 || typeof imageBase64 !== "string")
     throw new Error("Invalid image");
@@ -45,11 +49,10 @@ async function solveOpenAi(
   system,
   user,
   temperature,
-  maxTokens
+  maxTokens,
 ) {
   if (!isValidApiKey(apiKey)) throw new Error("Invalid API key");
-  if (!user || typeof user !== "string")
-    throw new Error("Invalid user prompt");
+  if (!user || typeof user !== "string") throw new Error("Invalid user prompt");
   const url = "https://api.openai.com/v1/chat/completions";
   const body = {
     model,
