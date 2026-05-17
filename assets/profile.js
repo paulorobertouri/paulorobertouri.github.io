@@ -72,6 +72,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function normalizeLinks() {
+    const unifiedButtonClass = 'action-button';
+
     const allBlankLinks = Array.from(document.querySelectorAll('a[target="_blank"]'));
     allBlankLinks.forEach(link => {
       link.rel = 'noreferrer';
@@ -91,19 +93,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const isFeatured = article.dataset.featured === 'true';
 
       links.forEach(link => {
-        link.className = 'inline-flex items-center gap-2 rounded-full border border-blue-300/35 bg-blue-400/15 px-3 py-1.5 text-blue-100 transition hover:-translate-y-0.5 hover:border-blue-200/70 hover:bg-blue-300/25 hover:text-white';
-
-        if (isFeatured) {
-          link.className = 'inline-flex items-center gap-2 rounded-full border border-fuchsia-300/45 bg-fuchsia-400/18 px-3 py-1.5 text-fuchsia-100 transition hover:-translate-y-0.5 hover:border-fuchsia-200/75 hover:bg-fuchsia-300/25 hover:text-white';
-        }
-
-        if (/pergamum-biblioteca\.pucpr\.br/i.test(link.href)) {
-          link.className = 'inline-flex items-center gap-2 rounded-full border border-pink-300/45 bg-pink-400/18 px-3 py-1.5 text-pink-100 transition hover:-translate-y-0.5 hover:border-pink-200/70 hover:bg-pink-300/25 hover:text-white';
-        }
+        link.className = unifiedButtonClass;
       });
 
       if (isFeatured && links[0]) {
-        links[0].className = 'inline-flex items-center gap-2 rounded-full border border-blue-200/60 bg-blue-300/30 px-3 py-1.5 text-white transition hover:-translate-y-0.5 hover:border-blue-100/90 hover:bg-blue-200/35';
+        links[0].className = unifiedButtonClass;
         links[0].innerHTML = '<i class="fas fa-rocket text-xs"></i> Launch Curriculum Tools';
       }
     });

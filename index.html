@@ -9,12 +9,12 @@
     <meta name="theme-color" content="#050816" />
     <meta
       name="description"
-      content="Paulo R. Pereira Jr. - Senior Full Stack Developer focused on AI, software architecture, data analysis, and technical leadership. Featured repositories and curriculum tools."
+      content="Paulo R. Pereira Jr. - Senior Full Stack Developer and Solutions Architect. Explore Curriculum Tools, a privacy-first browser CV screening app with PDF/DOCX parsing, AI scoring, and interview checkpoints for hiring teams."
     />
     <meta name="author" content="Paulo Roberto" />
     <meta
       name="keywords"
-      content="Paulo Roberto, Senior Full Stack Developer, Artificial Intelligence, Python, C#, ReactJS, SQL Server, Solutions Architect, Technical Leadership, Data Analysis, Psychologist, Researcher, IBPT, Impostometro"
+      content="Paulo Roberto, Senior Full Stack Developer, Solutions Architect, Artificial Intelligence, Curriculum Tools, CV screening, resume analysis, recruitment AI, hiring workflow, PDF DOCX parsing, interview checkpoints, Python, C#, ReactJS, SQL Server, Technical Leadership, Data Analysis, IBPT, Impostometro"
     />
     <meta name="robots" content="index, follow" />
     <meta
@@ -23,7 +23,7 @@
     />
     <meta
       property="og:description"
-      content="Senior Full Stack Developer. More than 25 years of experience in IT, technical leadership, software architecture, data analysis, and AI tooling."
+      content="Senior Full Stack Developer with 25+ years in IT. Creator of Curriculum Tools: a privacy-first browser app for CV screening, job-fit scoring, and structured interview guidance using AI."
     />
     <meta property="og:image" content="assets/img/avatar.jpg" />
     <meta property="og:url" content="https://paulorobertouri.github.io" />
@@ -35,7 +35,7 @@
     />
     <meta
       name="twitter:description"
-      content="Senior Full Stack Developer. More than 25 years of experience in IT, technical leadership, software architecture, data analysis, and AI tooling."
+      content="Senior Full Stack Developer with 25+ years in IT. Curriculum Tools provides privacy-first CV screening with PDF/DOCX extraction, AI scoring, and interview checkpoints."
     />
     <meta name="twitter:image" content="assets/img/avatar.jpg" />
     <title>
@@ -114,6 +114,32 @@
         transform: translateY(0);
       }
 
+      .action-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-radius: 9999px;
+        border: 1px solid rgba(147, 197, 253, 0.58);
+        background: rgba(30, 64, 175, 0.5);
+        padding: 0.62rem 1.1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #eff6ff;
+        transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+      }
+
+      .action-button:hover {
+        transform: translateY(-2px);
+        border-color: rgba(219, 234, 254, 0.95);
+        background: rgba(37, 99, 235, 0.72);
+        color: #ffffff;
+      }
+
+      .action-button:focus-visible {
+        outline: 2px solid rgba(147, 197, 253, 0.9);
+        outline-offset: 3px;
+      }
+
       .aurora-surface {
         position: relative;
       }
@@ -173,12 +199,7 @@
           <div class="grid gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10 lg:py-12">
             <div class="space-y-8">
               <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
-                <img
-                  class="h-32 w-32 rounded-3xl border border-white/15 object-cover shadow-2xl shadow-blue-950/30 ring-1 ring-white/10"
-                  src="assets/img/avatar.jpg"
-                  alt="Paulo R. Pereira Jr. portrait"
-                />
-
+                
                 <div class="space-y-4">
                   <div class="space-y-3">
                     <p class="font-display text-sm uppercase tracking-[0.32em] text-blue-200/90">
@@ -200,6 +221,14 @@
               </div>
 
               <p class="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+                <span class="float-left mr-6 mb-2 rounded-full border border-white/15 bg-white/5 p-1 shadow-lg shadow-blue-900/20">
+                  <img
+                  class="h-32 w-32 rounded-full border border-white/15 object-cover shadow-2xl shadow-blue-950/30 ring-1 ring-white/10"
+                  src="assets/img/avatar.jpg"
+                  alt="Paulo R. Pereira Jr. portrait"
+                />
+                </span>
+
                 Senior Solutions Architect and AI specialist with more than 25 years of experience in IT since 1998. I design and modernize large-scale distributed systems, lead AI-driven transformations, and support national data projects in Brazil, including Impostômetro and Empresômetro.
               </p>
 
@@ -224,7 +253,7 @@
 
               <div class="flex flex-wrap gap-3">
                 <a
-                  class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-blue-100"
+                  class="action-button"
                   href="https://github.com/paulorobertouri"
                   title="GitHub"
                   target="_blank"
@@ -234,7 +263,7 @@
                   GitHub profile
                 </a>
                 <a
-                  class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-blue-300/40 hover:bg-blue-400/10"
+                  class="action-button"
                   href="https://www.linkedin.com/in/paulorobertouri/"
                   title="LinkedIn"
                   target="_blank"
@@ -273,11 +302,16 @@
               <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-400/10 to-fuchsia-400/10 p-4">
                 <p class="text-sm font-semibold text-white">Featured work</p>
                 <div class="mt-2 text-sm leading-6 text-slate-300">
-                  Curriculum Tools is a privacy-first CV analysis app for reviewing, ranking, and refining candidates against job descriptions.
+                  Curriculum Tools is a browser-first hiring assistant that helps HR and tech teams compare CVs with job descriptions using structured AI scoring.
                 </div>
+                <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-300">
+                  <li>Upload PDF or DOCX resumes and normalize candidate information into a consistent review format.</li>
+                  <li>Generate criterion-by-criterion scores, strengths, risks, and interview prompts from the selected role profile.</li>
+                  <li>Keep API keys in localStorage and process data on demand, with no mandatory backend persistence layer.</li>
+                </ul>
                 <div class="mt-4 flex flex-wrap gap-3">
-                  <a class="text-sm font-semibold text-blue-200 hover:text-white" href="/curriculum-tools/">Open the tool</a>
-                  <a class="text-sm font-semibold text-blue-200 hover:text-white" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank">View repository</a>
+                  <a class="action-button" href="/curriculum-tools/">Open the tool</a>
+                  <a class="action-button" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank">View repository</a>
                 </div>
               </div>
             </aside>
@@ -290,7 +324,7 @@
                 <h3 class="mt-2 font-display text-3xl font-bold text-white">Public projects and templates</h3>
               </div>
               <a
-                class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-blue-300/40 hover:bg-blue-400/10"
+                class="action-button"
                 href="https://github.com/paulorobertouri?tab=repositories"
                 target="_blank"
                
@@ -323,11 +357,22 @@
                   <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
                 </div>
                 <p class="mt-3 max-w-3xl text-sm leading-7 text-blue-50/85">
-                  Local-first CV screening workspace that compares resumes with job descriptions using AI-assisted scoring and review.
+                  Local-first CV screening workspace for recruiters and hiring managers that compares resumes against job descriptions with transparent AI-assisted scoring.
+                </p>
+                <div class="mt-3 grid gap-2 text-sm leading-6 text-blue-100/90 sm:grid-cols-2">
+                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Supports PDF and DOCX ingestion with extraction tailored to candidate summaries.</div>
+                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Produces ranking rationale, fit indicators, and quick interview checkpoints.</div>
+                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Works with provider APIs like Gemini, OpenAI, or DeepSeek through user-managed keys.</div>
+                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Designed for privacy-aware teams that need faster triage without losing review quality.</div>
+                </div>
+                <p>
+                  <a class="text-sm font-semibold text-blue-200 hover:text-white" href="/curriculum-tools/">
+                  <img src="assets/img/curriculum-tools.png" alt="Curriculum Tools" class="mt-3 rounded-lg border border-white/10 object-cover shadow-lg shadow-blue-900/20">
+                    </a>  
                 </p>
                 <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="/curriculum-tools/">Open the tool</a>
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank">Open repository</a>
+                  <a class="action-button" href="/curriculum-tools/">Open the tool</a>
+                  <a class="action-button" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank">Open repository</a>
                 </div>
               </article>
 
