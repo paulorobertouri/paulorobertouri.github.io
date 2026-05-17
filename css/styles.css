@@ -1,3 +1,108 @@
+.tag-btn,
+.project-tag {
+  cursor: pointer;
+  transition: box-shadow 0.15s, background 0.15s, color 0.15s;
+}
+.tag-btn[data-tag*="FrontEnd"], .project-tag-frontend {
+  background: #38bdf822;
+  border-color: #38bdf8;
+  color: #38bdf8;
+}
+.tag-btn[data-tag*="Backend"], .project-tag-backend {
+  background: #a21caf22;
+  border-color: #a21caf;
+  color: #a21caf;
+}
+.tag-btn[data-tag*="AI"], .project-tag-ai {
+  background: #f59e4222;
+  border-color: #f59e42;
+  color: #f59e42;
+}
+.tag-btn[data-tag*="Template"], .project-tag-template {
+  background: #f472b622;
+  border-color: #f472b6;
+  color: #f472b6;
+}
+.tag-btn[data-tag*="Python"], .project-tag-python {
+  background: #2563eb22;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+.tag-btn[data-tag*="TypeScript"], .project-tag-typescript {
+  background: #facc1522;
+  border-color: #facc15;
+  color: #facc15;
+}
+.tag-btn[data-tag*="C#"], .project-tag-csharp {
+  background: #22d3ee22;
+  border-color: #22d3ee;
+  color: #22d3ee;
+}
+.tag-btn[data-tag*="Go"], .project-tag-go {
+  background: #10b98122;
+  border-color: #10b981;
+  color: #10b981;
+}
+.tag-btn[data-tag*="React"], .project-tag-react {
+  background: #60a5fa22;
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+.tag-btn[data-tag*="Angular"], .project-tag-angular {
+  background: #ea580c22;
+  border-color: #ea580c;
+  color: #ea580c;
+}
+.tag-btn[data-tag*="Node.js"], .project-tag-nodejs {
+  background: #22c55e22;
+  border-color: #22c55e;
+  color: #22c55e;
+}
+.tag-btn[data-tag*="Django"], .project-tag-django {
+  background: #05966922;
+  border-color: #059669;
+  color: #059669;
+}
+.tag-btn[data-tag*="Flask"], .project-tag-flask {
+  background: #f8717122;
+  border-color: #f87171;
+  color: #f87171;
+}
+.tag-btn[data-tag*="FastAPI"], .project-tag-fastapi {
+  background: #14b8a622;
+  border-color: #14b8a6;
+  color: #14b8a6;
+}
+.tag-btn[data-tag*="Preact"], .project-tag-preact {
+  background: #818cf822;
+  border-color: #818cf8;
+  color: #818cf8;
+}
+.tag-btn[data-tag*="WXT"], .project-tag-wxt {
+  background: #fbbf2422;
+  border-color: #fbbf24;
+  color: #fbbf24;
+}
+.tag-btn[data-tag*="CLI"], .project-tag-cli {
+  background: #64748b22;
+  border-color: #64748b;
+  color: #64748b;
+}
+.tag-btn[data-tag*="Tool"], .project-tag-tool {
+  background: #0ea5e922;
+  border-color: #0ea5e9;
+  color: #0ea5e9;
+}
+.tag-btn[data-tag*="Study"], .project-tag-study {
+  background: #f43f5e22;
+  border-color: #f43f5e;
+  color: #f43f5e;
+}
+.tag-btn[data-tag*="Data"], .project-tag-data {
+  background: #a3e63522;
+  border-color: #a3e635;
+  color: #a3e635;
+}
 @charset "UTF-8";
 
 header.masthead {
@@ -60,4 +165,136 @@ header.masthead .bg-circle-4 {
 
 .text-justify {
   text-align: justify;
+}
+
+.showcase {
+  position: relative;
+  z-index: 1;
+}
+
+.section-kicker {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.showcase-cta {
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.project-card {
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  background: rgba(4, 10, 28, 0.28);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.35);
+  background: rgba(4, 10, 28, 0.38);
+}
+
+.project-card .card-body {
+  padding: 1.25rem;
+}
+
+.project-card--highlight {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.14), rgba(4, 10, 28, 0.35));
+}
+
+.project-icon {
+  width: 3rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  margin-bottom: 0.85rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 0.75rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.project-title {
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.65rem;
+}
+
+.project-text {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-link {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+  padding-bottom: 0.15rem;
+}
+
+.project-link:hover {
+  color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+
+@media (max-width: 767.98px) {
+  .section-title {
+    font-size: 1.25rem;
+  }
+
+  .project-card .card-body {
+    padding: 1rem;
+  }
+}
+
+/* Tag filter and search bar enhancements */
+.tag-btn.ring {
+  box-shadow: 0 0 0 2px #22d3ee, 0 0 0 4px #0e7490;
+  border-color: #22d3ee !important;
+  background: #22d3ee22 !important;
+  color: #fff !important;
+}
+.tag-btn {
+  cursor: pointer;
+  transition: box-shadow 0.15s, background 0.15s, color 0.15s;
+}
+.tag-btn:focus {
+  outline: 2px solid #22d3ee;
+  outline-offset: 2px;
+}
+.tag-btn:hover {
+  background: #22d3ee33;
+  color: #fff;
+}
+.search-bar {
+  margin-bottom: 1rem;
+}
 }

@@ -6,9 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <meta name="theme-color" content="#050816" />
     <meta
       name="description"
-      content="Paulo R. Pereira Jr. - Senior Full Stack Developer. Specialist in AI, software architecture, data analysis, and technical leadership. Psychologist and academic researcher."
+      content="Paulo R. Pereira Jr. - Senior Full Stack Developer focused on AI, software architecture, data analysis, and technical leadership. Featured repositories and curriculum tools."
     />
     <meta name="author" content="Paulo Roberto" />
     <meta
@@ -22,7 +23,7 @@
     />
     <meta
       property="og:description"
-      content="Senior Full Stack Developer. More than 25 years of experience in IT, technical leadership, software architecture, and data analysis."
+      content="Senior Full Stack Developer. More than 25 years of experience in IT, technical leadership, software architecture, data analysis, and AI tooling."
     />
     <meta property="og:image" content="assets/img/avatar.jpg" />
     <meta property="og:url" content="https://paulorobertouri.github.io" />
@@ -34,133 +35,551 @@
     />
     <meta
       name="twitter:description"
-      content="Senior Full Stack Developer. More than 25 years of experience in IT, technical leadership, software architecture, and data analysis."
+      content="Senior Full Stack Developer. More than 25 years of experience in IT, technical leadership, software architecture, data analysis, and AI tooling."
     />
     <meta name="twitter:image" content="assets/img/avatar.jpg" />
     <title>
-      Paulo R. Pereira Jr. | Senior Full Stack Developer |
-      Psychologist
+      Paulo R. Pereira Jr. | Senior Full Stack Developer | Featured Repositories
     </title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      window.tailwind = window.tailwind || {};
+      window.tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Manrope", "ui-sans-serif", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "Manrope", "sans-serif"],
+            },
+            boxShadow: {
+              glow:
+                "0 0 0 1px rgba(148, 163, 184, 0.12), 0 24px 80px rgba(0, 0, 0, 0.45)",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script
+      defer
       src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
       crossorigin="anonymous"
     ></script>
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      .focus-ring:focus-visible,
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible {
+        outline: 2px solid rgba(147, 197, 253, 0.9);
+        outline-offset: 3px;
+      }
+
+      .skip-link {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 50;
+        transform: translateY(-200%);
+        border-radius: 999px;
+        border: 1px solid rgba(147, 197, 253, 0.7);
+        background: rgba(15, 23, 42, 0.95);
+        padding: 0.5rem 0.9rem;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #dbeafe;
+        transition: transform 120ms ease;
+      }
+
+      .skip-link:focus-visible {
+        transform: translateY(0);
+      }
+
+      .aurora-surface {
+        position: relative;
+      }
+
+      .aurora-surface::before {
+        content: "";
+        position: absolute;
+        inset: -1px;
+        border-radius: 2rem;
+        background: linear-gradient(120deg, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.36), rgba(236, 72, 153, 0.34), rgba(99, 102, 241, 0.34));
+        background-size: 220% 220%;
+        animation: auroraFlow 12s linear infinite;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      @keyframes auroraFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .aurora-surface::before {
+          animation: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <!-- Header-->
-    <header class="masthead text-center">
-      <div class="masthead-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-5">
-              <img
-                class="img-fluid rounded-circle mb-2 border border-5 border-light"
-                src="assets/img/avatar.jpg"
-                alt="Avatar"
-                style="max-width: 200px"
-              />
-            </div>
-            <div class="col-md-7">
-              <h1 class="masthead-heading mb-0 fs-2 text-white">
-                <strong>Paulo R. Pereira Jr.</strong>
-              </h1>
-              <h2 class="fs-6 m-0 mt-2 text-white">
-                <strong>Senior Full Stack Developer</strong> |
-                Technical Leader and
-                <strong>Solutions Architect</strong> | Data Analyst |
-                <strong>Artificial Intelligence</strong> |
-                <strong>Python</strong> | <strong>React</strong> | Psychologist
-                | Researcher
-              </h2>
-              <hr class="text-white" />
-              <p class="masthead-subheading mb-3 fs-6 text-white text-justify">
-                Currently, I work on developing
-                <strong>AI-based solutions</strong> at
-                <strong>Pinterest</strong> and engage in
-                <strong>academic research</strong>. I also serve as a
-                <strong>psychologist</strong> for NGOs and social projects. My
-                educational background includes
-                <strong>Business Administration</strong>,
-                <strong>Statistics</strong>, <strong>Marketing</strong>, and
-                <strong>Psychology</strong>, fields that strengthen my work in
-                <strong>technical leadership</strong>,
-                <strong>software architecture</strong>, and
-                <strong>data analysis</strong>.
-              </p>
-              <p class="masthead-subheading mb-3 fs-6 text-white text-justify">
-                I have been active in the
-                <strong>Information Technology</strong> sector since
-                <strong>1998</strong>. My career includes contributions to major
-                national projects in Brazil, such as
-                <strong>Impostometro</strong>, <strong>Empresometro</strong>,
-                and <strong>Eye on Taxes</strong>, developed by IBPT. From
-                <strong>2008 to 2023</strong>, I led
-                <strong>technology modernization</strong> initiatives for more
-                than <strong>650 car rental agencies</strong> and other
-                automotive companies across Latin America, building
-                <strong>B2C</strong>, <strong>B2B</strong>, and
-                <strong>Business Intelligence</strong> solutions.
-              </p>
-              <p class="masthead-subheading mb-3 fs-6 text-white text-justify">
-                As an <strong>LGBTQIAPN+</strong> person living with
-                <strong>chronic pain</strong> and
-                <strong>mobility limitations</strong> that prevent commuting or
-                traveling, I bring a strong commitment to
-                <strong>inclusion</strong> and <strong>accessibility</strong> in
-                both my professional and academic work.
-              </p>
+  <body class="bg-slate-950 font-sans text-slate-100 antialiased selection:bg-blue-300/30 selection:text-white">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div class="relative overflow-hidden">
+      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.24),_transparent_36%),radial-gradient(circle_at_80%_20%,_rgba(168,85,247,0.2),_transparent_30%),radial-gradient(circle_at_24%_78%,_rgba(236,72,153,0.14),_transparent_30%),radial-gradient(circle_at_88%_86%,_rgba(99,102,241,0.14),_transparent_30%),linear-gradient(180deg,_#050816_0%,_#09111f_55%,_#050816_100%)]"></div>
+      <div class="pointer-events-none absolute left-[-10rem] top-[-6rem] h-72 w-72 rounded-full bg-blue-400/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute right-[-8rem] top-32 h-80 w-80 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute left-[10%] top-[58%] h-64 w-64 rounded-full bg-purple-400/10 blur-3xl"></div>
+      <div class="pointer-events-none absolute right-[14%] top-[70%] h-64 w-64 rounded-full bg-pink-400/10 blur-3xl"></div>
+
+      <main id="main-content" class="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10" tabindex="-1">
+        <section class="aurora-surface overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-glow backdrop-blur-xl">
+          <div class="border-b border-white/10 bg-white/5 px-5 py-4 sm:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.28em] text-slate-300">
+              <span class="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">
+                <span class="h-2 w-2 rounded-full bg-blue-300"></span>
+                GitHub profile
+              </span>
+              <span>Senior Full Stack Developer</span>
             </div>
           </div>
-          <div class="mt-2">
-            <a
-              class="p-1 btn btn-outline-light"
-              href="https://github.com/paulorobertouri"
-              title="GitHub"
-              target="_blank"
-            >
-              <i class="fab fa-github fa-fw fa-2x"></i>
-            </a>
-            <a
-              class="p-1 btn btn-outline-light"
-              href="https://www.linkedin.com/in/paulorobertouri/"
-              title="LinkedIn"
-              target="_blank"
-            >
-              <i class="fab fa-linkedin fa-fw fa-2x"></i>
-            </a>
-            <a
-              class="p-1 btn btn-outline-light"
-              href="/curriculum-tools/"
-              title="Curriculum Tools"
-            >
-              <i class="fas fa-briefcase fa-fw fa-2x"></i>
-            </a>
+
+          <div class="grid gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10 lg:py-12">
+            <div class="space-y-8">
+              <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
+                <img
+                  class="h-32 w-32 rounded-3xl border border-white/15 object-cover shadow-2xl shadow-blue-950/30 ring-1 ring-white/10"
+                  src="assets/img/avatar.jpg"
+                  alt="Paulo R. Pereira Jr. portrait"
+                />
+
+                <div class="space-y-4">
+                  <div class="space-y-3">
+                    <p class="font-display text-sm uppercase tracking-[0.32em] text-blue-200/90">
+                      Paulo R. Pereira Jr.
+                    </p>
+                    <h1 class="max-w-2xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                      Building software systems with AI, architecture, and technical leadership.
+                    </h1>
+                  </div>
+
+                  <div class="flex flex-wrap gap-2 text-sm text-slate-200/90">
+                    <span class="rounded-full border border-blue-300/40 bg-blue-400/15 px-3 py-1 text-blue-100">Solutions Architect</span>
+                    <span class="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/15 px-3 py-1 text-fuchsia-100">AI Specialist</span>
+                    <span class="rounded-full border border-purple-300/40 bg-purple-400/15 px-3 py-1 text-purple-100">Data Analyst</span>
+                    <span class="rounded-full border border-pink-300/40 bg-pink-400/15 px-3 py-1 text-pink-100">Psychologist</span>
+                    <span class="rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-indigo-100">Researcher</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
+                Senior Solutions Architect and AI specialist with more than 25 years of experience in IT since 1998. I design and modernize large-scale distributed systems, lead AI-driven transformations, and support national data projects in Brazil, including Impostômetro and Empresômetro.
+              </p>
+
+              <p class="max-w-3xl text-base leading-8 text-slate-400">
+                I also advocate for digital accessibility and inclusive design as an LGBTQIA+ professional with mobility limitations, keeping the user experience practical, respectful, and usable for more people.
+              </p>
+
+              <div class="grid gap-4 sm:grid-cols-3">
+                <div class="rounded-2xl border border-blue-300/30 bg-gradient-to-br from-blue-400/18 to-slate-900/70 p-4">
+                  <div class="text-3xl font-semibold text-white">25+</div>
+                  <div class="mt-1 text-sm text-slate-400">years in IT and product delivery</div>
+                </div>
+                <div class="rounded-2xl border border-fuchsia-300/30 bg-gradient-to-br from-fuchsia-400/18 to-slate-900/70 p-4">
+                  <div class="text-3xl font-semibold text-white">650+</div>
+                  <div class="mt-1 text-sm text-slate-400">companies supported across Latin America</div>
+                </div>
+                <div class="rounded-2xl border border-purple-300/30 bg-gradient-to-br from-purple-400/18 to-slate-900/70 p-4">
+                  <div class="text-3xl font-semibold text-white">AI + Data</div>
+                  <div class="mt-1 text-sm text-slate-400">architecture, automation, and delivery</div>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-3">
+                <a
+                  class="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-blue-100"
+                  href="https://github.com/paulorobertouri"
+                  title="GitHub"
+                  target="_blank"
+                 
+                >
+                  <i class="fab fa-github"></i>
+                  GitHub profile
+                </a>
+                <a
+                  class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-blue-300/40 hover:bg-blue-400/10"
+                  href="https://www.linkedin.com/in/paulorobertouri/"
+                  title="LinkedIn"
+                  target="_blank"
+                 
+                >
+                  <i class="fab fa-linkedin"></i>
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+
+            <aside class="space-y-4 rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-5 shadow-2xl shadow-black/30 ring-1 ring-white/5 sm:p-6">
+              <div class="flex items-center justify-between gap-4">
+                <div>
+                  <p class="text-xs uppercase tracking-[0.28em] text-blue-200/80">Current focus</p>
+                  <h2 class="mt-2 font-display text-2xl font-bold text-white">Accessible AI delivery</h2>
+                </div>
+                <div class="rounded-2xl border border-blue-400/20 bg-blue-400/10 px-3 py-2 text-right text-xs text-blue-100">
+                  <div class="font-semibold">Since 1998</div>
+                  <div>IT leadership</div>
+                </div>
+              </div>
+
+              <div class="grid gap-3 text-sm text-slate-300">
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  Architecting distributed systems and modernizing legacy stacks into resilient services.
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  Building AI-assisted workflows for analysis, productivity, and decision support.
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                  Leading delivery across B2B, B2C, GDS, and business intelligence environments.
+                </div>
+              </div>
+
+              <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-400/10 to-fuchsia-400/10 p-4">
+                <p class="text-sm font-semibold text-white">Featured work</p>
+                <div class="mt-2 text-sm leading-6 text-slate-300">
+                  Curriculum Tools is a privacy-first CV analysis app for reviewing, ranking, and refining candidates against job descriptions.
+                </div>
+                <div class="mt-4 flex flex-wrap gap-3">
+                  <a class="text-sm font-semibold text-blue-200 hover:text-white" href="/curriculum-tools/">Open the tool</a>
+                  <a class="text-sm font-semibold text-blue-200 hover:text-white" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank">View repository</a>
+                </div>
+              </div>
+            </aside>
           </div>
-        </div>
-      </div>
-      <div class="bg-circle-1 bg-circle"></div>
-      <div class="bg-circle-2 bg-circle"></div>
-      <div class="bg-circle-3 bg-circle"></div>
-      <div class="bg-circle-4 bg-circle"></div>
-    </header>
-    <!-- Footer-->
-    <footer class="py-5 bg-black">
-      <div class="container px-5">
-        <p class="m-0 text-center text-white small">
+
+          <section class="repo-section border-t border-white/10 px-5 py-8 sm:px-8 lg:px-10">
+            <div class="flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <p class="text-xs uppercase tracking-[0.28em] text-blue-200/80">Repositories</p>
+                <h3 class="mt-2 font-display text-3xl font-bold text-white">Public projects and templates</h3>
+              </div>
+              <a
+                class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition hover:border-blue-300/40 hover:bg-blue-400/10"
+                href="https://github.com/paulorobertouri?tab=repositories"
+                target="_blank"
+               
+              >
+                View all on GitHub
+                <i class="fas fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+
+            <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base">
+              A curated view of the public templates, product experiments, and personal projects I maintain on GitHub.
+            </p>
+
+            <div class="repo-grid mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <article data-featured="true" class="group relative overflow-hidden rounded-3xl border border-fuchsia-300/35 bg-gradient-to-br from-blue-500/18 via-fuchsia-500/12 to-purple-500/18 p-5 shadow-lg shadow-fuchsia-900/20 transition hover:-translate-y-1 hover:border-fuchsia-200/50 hover:shadow-xl hover:shadow-fuchsia-900/35 sm:col-span-2 xl:col-span-2">
+                <div class="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-fuchsia-400/15 blur-2xl"></div>
+                <div class="pointer-events-none absolute -bottom-14 left-10 h-36 w-36 rounded-full bg-blue-400/15 blur-2xl"></div>
+                  <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-blue-400/20 text-blue-100">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                </div>
+                <h4 class="mt-5 text-2xl font-semibold text-white">Curriculum Tools</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Tool</span>
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">AI</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                </div>
+                <p class="mt-3 max-w-3xl text-sm leading-7 text-blue-50/85">
+                  Local-first CV screening workspace that compares resumes with job descriptions using AI-assisted scoring and review.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="/curriculum-tools/">Open the tool</a>
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-palette"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Rosilda - Mapas de calor <small></small></h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Study</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Data</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                </div>
+                 <p class="mt-2 text-sm leading-7 text-slate-300"><strong>English:</strong> This project aims to create heat maps for Brazil using Python for my friend Rosilda. It uses 2024 data on the number of higher education institutions by Brazilian region across the groups Anima, Cogna, Cruzeiro do Sul, Ser Educacional, Vitru, and Yduqs.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400"><strong>Português:</strong> Este projeto tem como objetivo a criação de mapas de calor para o Brasil, utilizando a linguagem de programação Python, para a minha amiga Rosilda. Foram utilizados dados do número de instituições de ensino superior por região do Brasil pertencentes aos grupos Ânima, Cogna, Cruzeiro do Sul, Ser Educacional, Vitru e Yduqs em 2024.</p>
+               <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/rosilda-mapas-de-calor" target="_blank">Open repository</a>
+                  <a class="text-fuchsia-300 transition hover:text-white" href="https://pergamum-biblioteca.pucpr.br/acervo/380598" target="_blank">Open library (Rosilda's Thesis)</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Angular Front-End Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Angular</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Opinionated Angular foundation for building scalable front ends with a clean structure and reusable patterns.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/angular-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Django Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Django</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Django starter for database-backed applications, admin workflows, and rapid product scaffolding.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/django-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">C#</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">.NET Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">C#</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">.NET</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">.NET foundation for API services, modular business logic, and solution-ready backend architecture.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/dotnet-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Express.js Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Node.js</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Express.js</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Node.js API starter for services, middleware, and lightweight backend prototypes.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/expressjs-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">FastAPI Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">FastAPI</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">FastAPI starter for fast, validated APIs with a simple path to deployment.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/fastapi-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Flask Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Flask</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Lightweight Flask base for small web apps, internal tools, and quick prototypes.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/flask-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Go</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Go Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Go</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Compact Go foundation for fast services, command-line workflows, and straightforward deployment.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/go-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Python Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">CLI</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">General-purpose Python starter for automation, scripting, and service-oriented tasks.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/python-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">Preact Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Preact</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Lean Preact starter for fast interfaces and lightweight front-end delivery.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/vite-preact-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">React Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">React</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">Modern React starter with Vite for app development and reusable component work.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/vite-react-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+
+              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+                <div class="flex items-start justify-between gap-4">
+                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    <i class="fas fa-folder-open"></i>
+                  </div>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                </div>
+                <h4 class="mt-5 text-xl font-semibold text-white">WXT React Template</h4>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
+                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">WXT</span>
+                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">React</span>
+                </div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">WXT and React starter for modern browser extension workflows.</p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/wxt-react-template" target="_blank">Open repository</a>
+                </div>
+              </article>
+            </div>
+          </section>
+        </section>
+
+        <footer class="mt-6 pb-4 text-center text-sm text-slate-500">
           Copyright &copy; Paulo R. Pereira Jr. 2026
-        </p>
-      </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+        </footer>
+      </main>
+        </div>
+        <script src="assets/profile.js"></script>
+      </body>
+    </html>
