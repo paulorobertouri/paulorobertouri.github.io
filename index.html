@@ -9,12 +9,12 @@
     <meta name="theme-color" content="#050816" />
     <meta
       name="description"
-      content="Paulo R. Pereira Jr. - Senior Full Stack Developer and Solutions Architect. Explore Curriculum Tools, a privacy-first browser CV screening app with PDF/DOCX parsing, AI scoring, and interview checkpoints for hiring teams."
+      content="Paulo R. Pereira Jr. - Senior Full Stack Developer and Solutions Architect. Explore AI Engineer Coding Challenge and Curriculum Tools, featuring production-style AI workflows, full-stack engineering, and browser-based hiring tools."
     />
     <meta name="author" content="Paulo Roberto" />
     <meta
       name="keywords"
-      content="Paulo Roberto, Senior Full Stack Developer, Solutions Architect, Artificial Intelligence, Curriculum Tools, CV screening, resume analysis, recruitment AI, hiring workflow, PDF DOCX parsing, interview checkpoints, Python, C#, ReactJS, SQL Server, Technical Leadership, Data Analysis, IBPT, Impostometro"
+      content="Paulo Roberto, Senior Full Stack Developer, Solutions Architect, Artificial Intelligence, AI Engineer Coding Challenge, Curriculum Tools, C#, .NET, ReactJS, Docker, Playwright, observability, CV screening, resume analysis, recruitment AI, hiring workflow, Python, SQL Server, Technical Leadership, Data Analysis"
     />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://paulorobertouri.github.io/" />
@@ -24,9 +24,12 @@
     />
     <meta
       property="og:description"
-      content="Senior Full Stack Developer with 25+ years in IT. Creator of Curriculum Tools: a privacy-first browser app for CV screening, job-fit scoring, and structured interview guidance using AI."
+      content="Senior Full Stack Developer with 25+ years in IT. Creator of AI Engineer Coding Challenge and Curriculum Tools, with production-style AI and full-stack engineering projects."
     />
-    <meta property="og:image" content="https://paulorobertouri.github.io/assets/img/avatar.jpg" />
+    <meta
+      property="og:image"
+      content="https://paulorobertouri.github.io/assets/img/avatar.jpg"
+    />
     <meta property="og:url" content="https://paulorobertouri.github.io/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -36,28 +39,41 @@
     />
     <meta
       name="twitter:description"
-      content="Senior Full Stack Developer with 25+ years in IT. Curriculum Tools provides privacy-first CV screening with PDF/DOCX extraction, AI scoring, and interview checkpoints."
+      content="Senior Full Stack Developer with 25+ years in IT. AI Engineer Coding Challenge and Curriculum Tools showcase production-style AI and full-stack engineering."
     />
-    <meta name="twitter:image" content="https://paulorobertouri.github.io/assets/img/avatar.jpg" />
+    <meta
+      name="twitter:image"
+      content="https://paulorobertouri.github.io/assets/img/avatar.jpg"
+    />
     <title>
-      Paulo R. Pereira Jr. | Senior Full Stack Developer | Featured Repositories
+      Paulo R. Pereira Jr. | Senior Full Stack Developer | AI Engineer Coding
+      Challenge
     </title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Paulo R. Pereira Jr.",
-      "url": "https://paulorobertouri.github.io/",
-      "image": "https://paulorobertouri.github.io/assets/img/avatar.jpg",
-      "jobTitle": "Senior Full Stack Developer",
-      "description": "Senior Solutions Architect and AI specialist with more than 25 years of experience in IT since 1998.",
-      "sameAs": [
-        "https://github.com/paulorobertouri",
-        "https://www.linkedin.com/in/paulorobertouri/"
-      ],
-      "knowsAbout": ["Artificial Intelligence", "Solutions Architecture", "Full Stack Development", "Data Analysis", "Python", "C#", "React", "TypeScript"]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Paulo R. Pereira Jr.",
+        "url": "https://paulorobertouri.github.io/",
+        "image": "https://paulorobertouri.github.io/assets/img/avatar.jpg",
+        "jobTitle": "Senior Full Stack Developer",
+        "description": "Senior Solutions Architect and AI specialist with more than 25 years of experience in IT since 1998.",
+        "sameAs": [
+          "https://github.com/paulorobertouri",
+          "https://www.linkedin.com/in/paulorobertouri/"
+        ],
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Solutions Architecture",
+          "Full Stack Development",
+          "Data Analysis",
+          "Python",
+          "C#",
+          "React",
+          "TypeScript"
+        ]
+      }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,8 +91,7 @@
               display: ["Space Grotesk", "Manrope", "sans-serif"],
             },
             boxShadow: {
-              glow:
-                "0 0 0 1px rgba(148, 163, 184, 0.12), 0 24px 80px rgba(0, 0, 0, 0.45)",
+              glow: "0 0 0 1px rgba(148, 163, 184, 0.12), 0 24px 80px rgba(0, 0, 0, 0.45)",
             },
           },
         },
@@ -142,7 +157,11 @@
         font-size: 0.875rem;
         font-weight: 600;
         color: #eff6ff;
-        transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+        transition:
+          transform 180ms ease,
+          background-color 180ms ease,
+          border-color 180ms ease,
+          color 180ms ease;
       }
 
       .action-button:hover {
@@ -166,7 +185,13 @@
         position: absolute;
         inset: -1px;
         border-radius: 2rem;
-        background: linear-gradient(120deg, rgba(59, 130, 246, 0.4), rgba(168, 85, 247, 0.36), rgba(236, 72, 153, 0.34), rgba(99, 102, 241, 0.34));
+        background: linear-gradient(
+          120deg,
+          rgba(59, 130, 246, 0.4),
+          rgba(168, 85, 247, 0.36),
+          rgba(236, 72, 153, 0.34),
+          rgba(99, 102, 241, 0.34)
+        );
         background-size: 220% 220%;
         animation: auroraFlow 12s linear infinite;
         pointer-events: none;
@@ -192,20 +217,42 @@
       }
     </style>
   </head>
-  <body class="bg-slate-950 font-sans text-slate-100 antialiased selection:bg-blue-300/30 selection:text-white">
+  <body
+    class="bg-slate-950 font-sans text-slate-100 antialiased selection:bg-blue-300/30 selection:text-white"
+  >
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="relative overflow-hidden">
-      <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.24),_transparent_36%),radial-gradient(circle_at_80%_20%,_rgba(168,85,247,0.2),_transparent_30%),radial-gradient(circle_at_24%_78%,_rgba(236,72,153,0.14),_transparent_30%),radial-gradient(circle_at_88%_86%,_rgba(99,102,241,0.14),_transparent_30%),linear-gradient(180deg,_#050816_0%,_#09111f_55%,_#050816_100%)]"></div>
-      <div class="pointer-events-none absolute left-[-10rem] top-[-6rem] h-72 w-72 rounded-full bg-blue-400/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute right-[-8rem] top-32 h-80 w-80 rounded-full bg-fuchsia-500/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute left-[10%] top-[58%] h-64 w-64 rounded-full bg-purple-400/10 blur-3xl"></div>
-      <div class="pointer-events-none absolute right-[14%] top-[70%] h-64 w-64 rounded-full bg-pink-400/10 blur-3xl"></div>
+      <div
+        class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.24),_transparent_36%),radial-gradient(circle_at_80%_20%,_rgba(168,85,247,0.2),_transparent_30%),radial-gradient(circle_at_24%_78%,_rgba(236,72,153,0.14),_transparent_30%),radial-gradient(circle_at_88%_86%,_rgba(99,102,241,0.14),_transparent_30%),linear-gradient(180deg,_#050816_0%,_#09111f_55%,_#050816_100%)]"
+      ></div>
+      <div
+        class="pointer-events-none absolute left-[-10rem] top-[-6rem] h-72 w-72 rounded-full bg-blue-400/10 blur-3xl"
+      ></div>
+      <div
+        class="pointer-events-none absolute right-[-8rem] top-32 h-80 w-80 rounded-full bg-fuchsia-500/10 blur-3xl"
+      ></div>
+      <div
+        class="pointer-events-none absolute left-[10%] top-[58%] h-64 w-64 rounded-full bg-purple-400/10 blur-3xl"
+      ></div>
+      <div
+        class="pointer-events-none absolute right-[14%] top-[70%] h-64 w-64 rounded-full bg-pink-400/10 blur-3xl"
+      ></div>
 
-      <main id="main-content" class="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10" tabindex="-1">
-        <section class="aurora-surface overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-glow backdrop-blur-xl">
+      <main
+        id="main-content"
+        class="relative mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10"
+        tabindex="-1"
+      >
+        <section
+          class="aurora-surface overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 shadow-glow backdrop-blur-xl"
+        >
           <div class="border-b border-white/10 bg-white/5 px-5 py-4 sm:px-8">
-            <div class="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.28em] text-slate-300">
-              <span class="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">
+            <div
+              class="flex flex-wrap items-center justify-between gap-3 text-xs uppercase tracking-[0.28em] text-slate-300"
+            >
+              <span
+                class="inline-flex items-center gap-2 rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+              >
                 <span class="h-2 w-2 rounded-full bg-blue-300"></span>
                 GitHub profile
               </span>
@@ -213,58 +260,102 @@
             </div>
           </div>
 
-          <div class="grid gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10 lg:py-12">
+          <div
+            class="grid gap-10 px-5 py-8 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:px-10 lg:py-12"
+          >
             <div class="space-y-8">
               <div class="flex flex-col gap-6 sm:flex-row sm:items-center">
-                
                 <div class="space-y-4">
                   <div class="space-y-3">
-                    <p class="font-display text-sm uppercase tracking-[0.32em] text-blue-200/90">
+                    <p
+                      class="font-display text-sm uppercase tracking-[0.32em] text-blue-200/90"
+                    >
                       Paulo R. Pereira Jr.
                     </p>
-                    <h1 class="max-w-2xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                      Building software systems with AI, architecture, and technical leadership.
+                    <h1
+                      class="max-w-2xl font-display text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
+                    >
+                      Building software systems with AI, architecture, and
+                      technical leadership.
                     </h1>
                   </div>
 
                   <div class="flex flex-wrap gap-2 text-sm text-slate-200/90">
-                    <span class="rounded-full border border-blue-300/40 bg-blue-400/15 px-3 py-1 text-blue-100">Solutions Architect</span>
-                    <span class="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/15 px-3 py-1 text-fuchsia-100">AI Specialist</span>
-                    <span class="rounded-full border border-purple-300/40 bg-purple-400/15 px-3 py-1 text-purple-100">Data Analyst</span>
-                    <span class="rounded-full border border-pink-300/40 bg-pink-400/15 px-3 py-1 text-pink-100">Psychologist</span>
-                    <span class="rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-indigo-100">Researcher</span>
+                    <span
+                      class="rounded-full border border-blue-300/40 bg-blue-400/15 px-3 py-1 text-blue-100"
+                      >Solutions Architect</span
+                    >
+                    <span
+                      class="rounded-full border border-fuchsia-300/40 bg-fuchsia-400/15 px-3 py-1 text-fuchsia-100"
+                      >AI Specialist</span
+                    >
+                    <span
+                      class="rounded-full border border-purple-300/40 bg-purple-400/15 px-3 py-1 text-purple-100"
+                      >Data Analyst</span
+                    >
+                    <span
+                      class="rounded-full border border-pink-300/40 bg-pink-400/15 px-3 py-1 text-pink-100"
+                      >Psychologist</span
+                    >
+                    <span
+                      class="rounded-full border border-indigo-300/40 bg-indigo-400/15 px-3 py-1 text-indigo-100"
+                      >Researcher</span
+                    >
                   </div>
                 </div>
               </div>
 
-              <p class="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg">
-                <span class="float-left mr-6 mb-2 rounded-full border border-white/15 bg-white/5 p-1 shadow-lg shadow-blue-900/20">
+              <p
+                class="max-w-3xl text-base leading-8 text-slate-300 sm:text-lg"
+              >
+                <span
+                  class="float-left mr-6 mb-2 rounded-full border border-white/15 bg-white/5 p-1 shadow-lg shadow-blue-900/20"
+                >
                   <img
-                  class="h-32 w-32 rounded-full border border-white/15 object-cover shadow-2xl shadow-blue-950/30 ring-1 ring-white/10"
-                  src="assets/img/avatar.jpg"
-                  alt="Paulo R. Pereira Jr. portrait"
-                />
+                    class="h-32 w-32 rounded-full border border-white/15 object-cover shadow-2xl shadow-blue-950/30 ring-1 ring-white/10"
+                    src="assets/img/avatar.jpg"
+                    alt="Paulo R. Pereira Jr. portrait"
+                  />
                 </span>
 
-                Senior Solutions Architect and AI specialist with more than 25 years of experience in IT since 1998. I design and modernize large-scale distributed systems, lead AI-driven transformations, and support national data projects in Brazil, including Impostômetro and Empresômetro.
+                Senior Solutions Architect and AI specialist with more than 25
+                years of experience in IT since 1998. I design and modernize
+                large-scale distributed systems, lead AI-driven transformations,
+                and support national data projects in Brazil, including
+                Impostômetro and Empresômetro.
               </p>
 
               <p class="max-w-3xl text-base leading-8 text-slate-400">
-                I also advocate for digital accessibility and inclusive design as an LGBTQIA+ professional with mobility limitations, keeping the user experience practical, respectful, and usable for more people.
+                I also advocate for digital accessibility and inclusive design
+                as an LGBTQIA+ professional with mobility limitations, keeping
+                the user experience practical, respectful, and usable for more
+                people.
               </p>
 
               <div class="grid gap-4 sm:grid-cols-3">
-                <div class="rounded-2xl border border-blue-300/30 bg-gradient-to-br from-blue-400/18 to-slate-900/70 p-4">
+                <div
+                  class="rounded-2xl border border-blue-300/30 bg-gradient-to-br from-blue-400/18 to-slate-900/70 p-4"
+                >
                   <div class="text-3xl font-semibold text-white">25+</div>
-                  <div class="mt-1 text-sm text-slate-400">years in IT and product delivery</div>
+                  <div class="mt-1 text-sm text-slate-400">
+                    years in IT and product delivery
+                  </div>
                 </div>
-                <div class="rounded-2xl border border-fuchsia-300/30 bg-gradient-to-br from-fuchsia-400/18 to-slate-900/70 p-4">
+                <div
+                  class="rounded-2xl border border-fuchsia-300/30 bg-gradient-to-br from-fuchsia-400/18 to-slate-900/70 p-4"
+                >
                   <div class="text-3xl font-semibold text-white">650+</div>
-                  <div class="mt-1 text-sm text-slate-400">companies supported across Latin America</div>
+                  <div class="mt-1 text-sm text-slate-400">
+                    companies supported across Latin America
+                  </div>
                 </div>
-                <div class="rounded-2xl border border-purple-300/30 bg-gradient-to-br from-purple-400/18 to-slate-900/70 p-4">
+                <div
+                  class="rounded-2xl border border-purple-300/30 bg-gradient-to-br from-purple-400/18 to-slate-900/70 p-4"
+                >
                   <div class="text-3xl font-semibold text-white">AI + Data</div>
-                  <div class="mt-1 text-sm text-slate-400">architecture, automation, and delivery</div>
+                  <div class="mt-1 text-sm text-slate-400">
+                    architecture, automation, and delivery
+                  </div>
                 </div>
               </div>
 
@@ -274,7 +365,7 @@
                   href="https://github.com/paulorobertouri"
                   title="GitHub"
                   target="_blank"
-                 rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-github"></i>
                   GitHub profile
@@ -284,7 +375,7 @@
                   href="https://www.linkedin.com/in/paulorobertouri/"
                   title="LinkedIn"
                   target="_blank"
-                 rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i class="fab fa-linkedin"></i>
                   LinkedIn
@@ -292,13 +383,23 @@
               </div>
             </div>
 
-            <aside class="space-y-4 rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-5 shadow-2xl shadow-black/30 ring-1 ring-white/5 sm:p-6">
+            <aside
+              class="space-y-4 rounded-[1.75rem] border border-white/10 bg-slate-950/60 p-5 shadow-2xl shadow-black/30 ring-1 ring-white/5 sm:p-6"
+            >
               <div class="flex items-center justify-between gap-4">
                 <div>
-                  <p class="text-xs uppercase tracking-[0.28em] text-blue-200/80">Current focus</p>
-                  <h2 class="mt-2 font-display text-2xl font-bold text-white">Accessible AI delivery</h2>
+                  <p
+                    class="text-xs uppercase tracking-[0.28em] text-blue-200/80"
+                  >
+                    Current focus
+                  </p>
+                  <h2 class="mt-2 font-display text-2xl font-bold text-white">
+                    Accessible AI delivery
+                  </h2>
                 </div>
-                <div class="rounded-2xl border border-blue-400/20 bg-blue-400/10 px-3 py-2 text-right text-xs text-blue-100">
+                <div
+                  class="rounded-2xl border border-blue-400/20 bg-blue-400/10 px-3 py-2 text-right text-xs text-blue-100"
+                >
                   <div class="font-semibold">Since 1998</div>
                   <div>IT leadership</div>
                 </div>
@@ -306,395 +407,1004 @@
 
               <div class="grid gap-3 text-sm text-slate-300">
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  Architecting distributed systems and modernizing legacy stacks into resilient services.
+                  Architecting distributed systems and modernizing legacy stacks
+                  into resilient services.
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  Building AI-assisted workflows for analysis, productivity, and decision support.
+                  Building AI-assisted workflows for analysis, productivity, and
+                  decision support.
                 </div>
                 <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  Leading delivery across B2B, B2C, GDS, and business intelligence environments.
+                  Leading delivery across B2B, B2C, GDS, and business
+                  intelligence environments.
                 </div>
               </div>
 
-              <div class="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-400/10 to-fuchsia-400/10 p-4">
+              <div
+                class="rounded-2xl border border-white/10 bg-gradient-to-br from-blue-400/10 to-fuchsia-400/10 p-4"
+              >
                 <p class="text-sm font-semibold text-white">Featured work</p>
                 <div class="mt-2 text-sm leading-6 text-slate-300">
-                  Curriculum Tools is a browser-first hiring assistant that helps HR and tech teams compare CVs with job descriptions using structured AI scoring.
+                  Curriculum Tools is a browser-first hiring assistant that
+                  helps HR and tech teams compare CVs with job descriptions
+                  using structured AI scoring.
                 </div>
                 <ul class="mt-3 space-y-2 text-sm leading-6 text-slate-300">
-                  <li>Upload PDF or DOCX resumes and normalize candidate information into a consistent review format.</li>
-                  <li>Generate criterion-by-criterion scores, strengths, risks, and interview prompts from the selected role profile.</li>
-                  <li>Keep API keys in localStorage and process data on demand, with no mandatory backend persistence layer.</li>
+                  <li>
+                    Upload PDF or DOCX resumes and normalize candidate
+                    information into a consistent review format.
+                  </li>
+                  <li>
+                    Generate criterion-by-criterion scores, strengths, risks,
+                    and interview prompts from the selected role profile.
+                  </li>
+                  <li>
+                    Keep API keys in localStorage and process data on demand,
+                    with no mandatory backend persistence layer.
+                  </li>
                 </ul>
                 <a href="/curriculum-tools/" title="Open Curriculum Tools">
-                  <img src="assets/img/curriculum-tools-candidate.png" alt="Curriculum Tools — Candidate CV Reviewer with role context and CV upload ready" class="mt-4 w-full rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                  <img
+                    src="assets/img/curriculum-tools-candidate.png"
+                    alt="Curriculum Tools — Candidate CV Reviewer with role context and CV upload ready"
+                    class="mt-4 w-full rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                  />
                 </a>
                 <div class="mt-4 flex flex-wrap gap-3">
-                  <a class="action-button" href="/curriculum-tools/">Open the tool</a>
-                  <a class="action-button" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank" rel="noopener noreferrer">View repository</a>
+                  <a class="action-button" href="/curriculum-tools/"
+                    >Open the tool</a
+                  >
+                  <a
+                    class="action-button"
+                    href="https://github.com/paulorobertouri/curriculum-tools"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >View repository</a
+                  >
                 </div>
               </div>
             </aside>
           </div>
 
-          <section class="repo-section border-t border-white/10 px-5 py-8 sm:px-8 lg:px-10">
+          <section
+            class="repo-section border-t border-white/10 px-5 py-8 sm:px-8 lg:px-10"
+          >
             <div class="flex flex-wrap items-end justify-between gap-4">
               <div>
-                <p class="text-xs uppercase tracking-[0.28em] text-blue-200/80">Repositories</p>
-                <h3 class="mt-2 font-display text-3xl font-bold text-white">Public projects and templates</h3>
+                <p class="text-xs uppercase tracking-[0.28em] text-blue-200/80">
+                  Repositories
+                </p>
+                <h3 class="mt-2 font-display text-3xl font-bold text-white">
+                  Public projects and templates
+                </h3>
               </div>
               <a
                 class="action-button"
                 href="https://github.com/paulorobertouri?tab=repositories"
                 target="_blank"
-               rel="noopener noreferrer"
+                rel="noopener noreferrer"
               >
                 View all on GitHub
                 <i class="fas fa-arrow-up-right-from-square text-xs"></i>
               </a>
             </div>
 
-            <p class="mt-4 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base">
-              A curated view of the public templates, product experiments, and personal projects I maintain on GitHub.
+            <p
+              class="mt-4 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base"
+            >
+              A curated view of the public templates, product experiments, and
+              personal projects I maintain on GitHub.
             </p>
 
-            <div class="repo-grid mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              <article data-featured="true" class="group relative overflow-hidden rounded-3xl border border-fuchsia-300/35 bg-gradient-to-br from-blue-500/18 via-fuchsia-500/12 to-purple-500/18 p-5 shadow-lg shadow-fuchsia-900/20 transition hover:-translate-y-1 hover:border-fuchsia-200/50 hover:shadow-xl hover:shadow-fuchsia-900/35 sm:col-span-2 xl:col-span-2">
-                <div class="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-fuchsia-400/15 blur-2xl"></div>
-                <div class="pointer-events-none absolute -bottom-14 left-10 h-36 w-36 rounded-full bg-blue-400/15 blur-2xl"></div>
-                  <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-blue-400/20 text-blue-100">
+            <div
+              class="repo-grid mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+            >
+              <article
+                data-featured="true"
+                class="group relative overflow-hidden rounded-3xl border border-fuchsia-300/35 bg-gradient-to-br from-blue-500/18 via-fuchsia-500/12 to-purple-500/18 p-5 shadow-lg shadow-fuchsia-900/20 transition hover:-translate-y-1 hover:border-fuchsia-200/50 hover:shadow-xl hover:shadow-fuchsia-900/35 sm:col-span-2 xl:col-span-2"
+              >
+                <div
+                  class="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-fuchsia-400/15 blur-2xl"
+                ></div>
+                <div
+                  class="pointer-events-none absolute -bottom-14 left-10 h-36 w-36 rounded-full bg-blue-400/15 blur-2xl"
+                ></div>
+                <div class="flex items-start justify-between gap-4">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/20 bg-blue-400/20 text-blue-100"
+                  >
                     <i class="fas fa-wand-magic-sparkles"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
-                <h4 class="mt-5 text-2xl font-semibold text-white">Curriculum Tools</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Tool</span>
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">AI</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
+                <h4 class="mt-5 text-2xl font-semibold text-white">
+                  Curriculum Tools
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Tool</span
+                  >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >FrontEnd</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >AI</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
                 <p class="mt-3 max-w-3xl text-sm leading-7 text-blue-50/85">
-                  Local-first CV screening workspace for recruiters and hiring managers that compares resumes against job descriptions with transparent AI-assisted scoring.
+                  Local-first CV screening workspace for recruiters and hiring
+                  managers that compares resumes against job descriptions with
+                  transparent AI-assisted scoring.
                 </p>
-                <div class="mt-3 grid gap-2 text-sm leading-6 text-blue-100/90 sm:grid-cols-2">
-                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Supports PDF and DOCX ingestion with extraction tailored to candidate summaries.</div>
-                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Produces ranking rationale, fit indicators, and quick interview checkpoints.</div>
-                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Works with provider APIs like Gemini, OpenAI, or DeepSeek through user-managed keys.</div>
-                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Designed for privacy-aware teams that need faster triage without losing review quality.</div>
+                <div
+                  class="mt-3 grid gap-2 text-sm leading-6 text-blue-100/90 sm:grid-cols-2"
+                >
+                  <div
+                    class="rounded-xl border border-white/10 bg-white/5 px-3 py-2"
+                  >
+                    Supports PDF and DOCX ingestion with extraction tailored to
+                    candidate summaries.
+                  </div>
+                  <div
+                    class="rounded-xl border border-white/10 bg-white/5 px-3 py-2"
+                  >
+                    Produces ranking rationale, fit indicators, and quick
+                    interview checkpoints.
+                  </div>
+                  <div
+                    class="rounded-xl border border-white/10 bg-white/5 px-3 py-2"
+                  >
+                    Works with provider APIs like Gemini, OpenAI, or DeepSeek
+                    through user-managed keys.
+                  </div>
+                  <div
+                    class="rounded-xl border border-white/10 bg-white/5 px-3 py-2"
+                  >
+                    Designed for privacy-aware teams that need faster triage
+                    without losing review quality.
+                  </div>
                 </div>
                 <div class="mt-4 grid gap-3 sm:grid-cols-3">
                   <figure class="flex flex-col gap-1">
                     <a href="/curriculum-tools/" title="Open Curriculum Tools">
-                      <img src="assets/img/curriculum-tools.png" alt="Provider setup screen — connect Gemini, OpenAI, or DeepSeek before using the tools" class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                      <img
+                        src="assets/img/curriculum-tools.png"
+                        alt="Provider setup screen — connect Gemini, OpenAI, or DeepSeek before using the tools"
+                        class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                      />
                     </a>
-                    <figcaption class="text-center text-xs text-slate-400">Provider setup</figcaption>
+                    <figcaption class="text-center text-xs text-slate-400">
+                      Provider setup
+                    </figcaption>
                   </figure>
                   <figure class="flex flex-col gap-1">
                     <a href="/curriculum-tools/" title="Open Curriculum Tools">
-                      <img src="assets/img/curriculum-tools-candidate.png" alt="Candidate CV Reviewer — upload ready state with role context and CV file loaded" class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                      <img
+                        src="assets/img/curriculum-tools-candidate.png"
+                        alt="Candidate CV Reviewer — upload ready state with role context and CV file loaded"
+                        class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                      />
                     </a>
-                    <figcaption class="text-center text-xs text-slate-400">Candidate CV Reviewer</figcaption>
+                    <figcaption class="text-center text-xs text-slate-400">
+                      Candidate CV Reviewer
+                    </figcaption>
                   </figure>
                   <figure class="flex flex-col gap-1">
                     <a href="/curriculum-tools/" title="Open Curriculum Tools">
-                      <img src="assets/img/curriculum-tools-quality.png" alt="Quality Evaluation Harness — score drift and ranking stability monitoring across prompt and model changes" class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                      <img
+                        src="assets/img/curriculum-tools-quality.png"
+                        alt="Quality Evaluation Harness — score drift and ranking stability monitoring across prompt and model changes"
+                        class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                      />
                     </a>
-                    <figcaption class="text-center text-xs text-slate-400">Quality Harness</figcaption>
+                    <figcaption class="text-center text-xs text-slate-400">
+                      Quality Harness
+                    </figcaption>
                   </figure>
                 </div>
                 <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
-                  <a class="action-button" href="/curriculum-tools/">Open the tool</a>
-                  <a class="action-button" href="https://github.com/paulorobertouri/curriculum-tools" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a class="action-button" href="/curriculum-tools/"
+                    >Open the tool</a
+                  >
+                  <a
+                    class="action-button"
+                    href="https://github.com/paulorobertouri/curriculum-tools"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8 sm:col-span-2">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8 sm:col-span-2"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-robot"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">C# + React</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >C# + React</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">AI Engineer Coding Challenge</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Full Stack</span>
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">AI</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">.NET</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">React</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Docker</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  AI Engineer Coding Challenge
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >AI</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >FrontEnd</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >C#</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >.NET</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >React</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Docker</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Playwright</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Production-style challenge repository with backend, frontend, e2e evidence generation, observability, and security-oriented engineering documentation.</p>
-                <div class="mt-3 grid gap-2 text-sm leading-6 text-slate-300 sm:grid-cols-2">
-                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Includes scripts for setup, testing, rollback, diagnostics, and signed evidence workflows.</div>
-                  <div class="rounded-xl border border-white/10 bg-white/5 px-3 py-2">Combines API and UI validation with Playwright-based scenarios and reproducible artifacts.</div>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Production-style challenge repository with backend, frontend,
+                  e2e evidence generation, observability, and security-oriented
+                  engineering documentation.
+                </p>
+                <div
+                  class="mt-3 grid gap-2 text-sm leading-6 text-slate-300 sm:grid-cols-2"
+                >
+                  <div
+                    class="rounded-xl border border-white/10 bg-white/5 px-3 py-2"
+                  >
+                    Includes scripts for setup, testing, rollback, diagnostics,
+                    and signed evidence workflows.
+                  </div>
+                  <div
+                    class="rounded-xl border border-white/10 bg-white/5 px-3 py-2"
+                  >
+                    Combines API and UI validation with Playwright-based
+                    scenarios and reproducible artifacts.
+                  </div>
                 </div>
                 <div class="mt-4 grid gap-3 sm:grid-cols-3">
                   <figure class="flex flex-col gap-1">
-                    <a href="https://github.com/paulorobertouri/ai-engineer-coding-challenge" title="Open AI Engineer Coding Challenge repository" target="_blank" rel="noopener noreferrer">
-                      <img src="assets/img/ai-engineer-challenge-initial-load.png" alt="AI Engineer Coding Challenge initial application load state" class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                    <a
+                      href="https://github.com/paulorobertouri/ai-engineer-coding-challenge"
+                      title="Open AI Engineer Coding Challenge repository"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/img/ai-engineer-challenge-initial-load.png"
+                        alt="AI Engineer Coding Challenge initial application load state"
+                        class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                      />
                     </a>
-                    <figcaption class="text-center text-xs text-slate-400">Initial load</figcaption>
+                    <figcaption class="text-center text-xs text-slate-400">
+                      Initial load
+                    </figcaption>
                   </figure>
                   <figure class="flex flex-col gap-1">
-                    <a href="https://github.com/paulorobertouri/ai-engineer-coding-challenge" title="Open AI Engineer Coding Challenge repository" target="_blank" rel="noopener noreferrer">
-                      <img src="assets/img/ai-engineer-challenge-after-ingest.png" alt="AI Engineer Coding Challenge after ingesting source material" class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                    <a
+                      href="https://github.com/paulorobertouri/ai-engineer-coding-challenge"
+                      title="Open AI Engineer Coding Challenge repository"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/img/ai-engineer-challenge-after-ingest.png"
+                        alt="AI Engineer Coding Challenge after ingesting source material"
+                        class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                      />
                     </a>
-                    <figcaption class="text-center text-xs text-slate-400">After ingest</figcaption>
+                    <figcaption class="text-center text-xs text-slate-400">
+                      After ingest
+                    </figcaption>
                   </figure>
                   <figure class="flex flex-col gap-1">
-                    <a href="https://github.com/paulorobertouri/ai-engineer-coding-challenge" title="Open AI Engineer Coding Challenge repository" target="_blank" rel="noopener noreferrer">
-                      <img src="assets/img/ai-engineer-challenge-chat-response.png" alt="AI Engineer Coding Challenge chat response example" class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110">
+                    <a
+                      href="https://github.com/paulorobertouri/ai-engineer-coding-challenge"
+                      title="Open AI Engineer Coding Challenge repository"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src="assets/img/ai-engineer-challenge-chat-response.png"
+                        alt="AI Engineer Coding Challenge chat response example"
+                        class="rounded-xl border border-white/10 object-cover shadow-lg shadow-blue-900/20 transition hover:brightness-110"
+                      />
                     </a>
-                    <figcaption class="text-center text-xs text-slate-400">Chat response</figcaption>
+                    <figcaption class="text-center text-xs text-slate-400">
+                      Chat response
+                    </figcaption>
                   </figure>
                 </div>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/ai-engineer-coding-challenge" target="_blank" rel="noopener noreferrer">Open repository</a>
-                  <a class="ml-4 text-fuchsia-300 transition hover:text-white" href="https://github.com/paulorobertouri/ai-engineer-coding-challenge/blob/main/docs/architecture-flows.md" target="_blank" rel="noopener noreferrer">Open architecture notes</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/ai-engineer-coding-challenge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-palette"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Rosilda - Mapas de calor <small></small></h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Study</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Data</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Rosilda - Mapas de calor <small></small>
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Study</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Data</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                 <p class="mt-2 text-sm leading-7 text-slate-300"><strong>English:</strong> This project aims to create heat maps for Brazil using Python for my friend Rosilda. It uses 2024 data on the number of higher education institutions by Brazilian region across the groups Anima, Cogna, Cruzeiro do Sul, Ser Educacional, Vitru, and Yduqs.</p>
-                <p class="mt-3 text-sm leading-7 text-slate-400"><strong>Português:</strong> Este projeto tem como objetivo a criação de mapas de calor para o Brasil, utilizando a linguagem de programação Python, para a minha amiga Rosilda. Foram utilizados dados do número de instituições de ensino superior por região do Brasil pertencentes aos grupos Ânima, Cogna, Cruzeiro do Sul, Ser Educacional, Vitru e Yduqs em 2024.</p>
-               <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/rosilda-mapas-de-calor" target="_blank" rel="noopener noreferrer">Open repository</a>
-                  <a class="text-fuchsia-300 transition hover:text-white" href="https://pergamum-biblioteca.pucpr.br/acervo/380598" target="_blank" rel="noopener noreferrer">Open library (Rosilda's Thesis)</a>
+                <p class="mt-2 text-sm leading-7 text-slate-300">
+                  <strong>English:</strong> This project aims to create heat
+                  maps for Brazil using Python for my friend Rosilda. It uses
+                  2024 data on the number of higher education institutions by
+                  Brazilian region across the groups Anima, Cogna, Cruzeiro do
+                  Sul, Ser Educacional, Vitru, and Yduqs.
+                </p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  <strong>Português:</strong> Este projeto tem como objetivo a
+                  criação de mapas de calor para o Brasil, utilizando a
+                  linguagem de programação Python, para a minha amiga Rosilda.
+                  Foram utilizados dados do número de instituições de ensino
+                  superior por região do Brasil pertencentes aos grupos Ânima,
+                  Cogna, Cruzeiro do Sul, Ser Educacional, Vitru e Yduqs em
+                  2024.
+                </p>
+                <div class="mt-5 text-sm font-semibold">
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/rosilda-mapas-de-calor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
+                  <a
+                    class="text-fuchsia-300 transition hover:text-white"
+                    href="https://pergamum-biblioteca.pucpr.br/acervo/380598"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open library (Rosilda's Thesis)</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Angular Front-End Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Angular</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Angular Front-End Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >FrontEnd</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Angular</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Opinionated Angular foundation for building scalable front ends with a clean structure and reusable patterns.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Opinionated Angular foundation for building scalable front
+                  ends with a clean structure and reusable patterns.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/angular-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/angular-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Django Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Django</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Django Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Python</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Django</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Django starter for database-backed applications, admin workflows, and rapid product scaffolding.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Django starter for database-backed applications, admin
+                  workflows, and rapid product scaffolding.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/django-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/django-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">C#</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >C#</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">.NET Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">C#</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">.NET</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  .NET Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >C#</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >.NET</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">.NET foundation for API services, modular business logic, and solution-ready backend architecture.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  .NET foundation for API services, modular business logic, and
+                  solution-ready backend architecture.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/dotnet-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/dotnet-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Express.js Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Node.js</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Express.js</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Express.js Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Node.js</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Express.js</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Node.js API starter for services, middleware, and lightweight backend prototypes.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Node.js API starter for services, middleware, and lightweight
+                  backend prototypes.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/expressjs-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/expressjs-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">FastAPI Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">FastAPI</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  FastAPI Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Python</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >FastAPI</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">FastAPI starter for fast, validated APIs with a simple path to deployment.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  FastAPI starter for fast, validated APIs with a simple path to
+                  deployment.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/fastapi-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/fastapi-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Flask Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Flask</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Flask Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Python</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Flask</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Lightweight Flask base for small web apps, internal tools, and quick prototypes.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Lightweight Flask base for small web apps, internal tools, and
+                  quick prototypes.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/flask-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/flask-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Go</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >Go</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Go Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">Backend</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Go</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Go Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >Backend</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Go</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Compact Go foundation for fast services, command-line workflows, and straightforward deployment.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Compact Go foundation for fast services, command-line
+                  workflows, and straightforward deployment.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/go-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/go-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">Python</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Python Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">CLI</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Python</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Python Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >CLI</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Python</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">General-purpose Python starter for automation, scripting, and service-oriented tasks.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  General-purpose Python starter for automation, scripting, and
+                  service-oriented tasks.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/python-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/python-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">Preact Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Preact</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  Preact Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >FrontEnd</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Preact</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Lean Preact starter for fast interfaces and lightweight front-end delivery.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Lean Preact starter for fast interfaces and lightweight
+                  front-end delivery.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/vite-preact-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/vite-preact-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">React Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">React</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  React Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >FrontEnd</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >React</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">Modern React starter with Vite for app development and reusable component work.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  Modern React starter with Vite for app development and
+                  reusable component work.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/vite-react-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/vite-react-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
 
-              <article class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8">
+              <article
+                class="group rounded-3xl border border-white/10 bg-white/5 p-5 transition hover:-translate-y-1 hover:border-blue-300/30 hover:bg-white/8"
+              >
                 <div class="flex items-start justify-between gap-4">
-                  <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-white/90"
+                  >
                     <i class="fas fa-folder-open"></i>
                   </div>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200">TypeScript</span>
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-slate-200"
+                    >TypeScript</span
+                  >
                 </div>
-                <h4 class="mt-5 text-xl font-semibold text-white">WXT React Template</h4>
-                <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]">
-                  <span class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100">FrontEnd</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">Template</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">TypeScript</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">WXT</span>
-                  <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200">React</span>
+                <h4 class="mt-5 text-xl font-semibold text-white">
+                  WXT React Template
+                </h4>
+                <div
+                  class="mt-3 flex flex-wrap gap-2 text-xs font-semibold uppercase tracking-[0.18em]"
+                >
+                  <span
+                    class="rounded-full border border-blue-400/20 bg-blue-400/10 px-3 py-1 text-blue-100"
+                    >FrontEnd</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >Template</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >TypeScript</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >WXT</span
+                  >
+                  <span
+                    class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-slate-200"
+                    >React</span
+                  >
                 </div>
-                <p class="mt-3 text-sm leading-7 text-slate-400">WXT and React starter for modern browser extension workflows.</p>
+                <p class="mt-3 text-sm leading-7 text-slate-400">
+                  WXT and React starter for modern browser extension workflows.
+                </p>
                 <div class="mt-5 text-sm font-semibold">
-                  <a class="text-blue-200 transition hover:text-white" href="https://github.com/paulorobertouri/wxt-react-template" target="_blank" rel="noopener noreferrer">Open repository</a>
+                  <a
+                    class="text-blue-200 transition hover:text-white"
+                    href="https://github.com/paulorobertouri/wxt-react-template"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open repository</a
+                  >
                 </div>
               </article>
             </div>
@@ -705,7 +1415,7 @@
           Copyright &copy; Paulo R. Pereira Jr. 2026
         </footer>
       </main>
-        </div>
-        <script src="assets/profile.js"></script>
-      </body>
-    </html>
+    </div>
+    <script src="assets/profile.js"></script>
+  </body>
+</html>
