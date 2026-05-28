@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     articles.forEach((article) => {
-      const linkGroup = article.querySelector("div.mt-5");
+      const linkGroup = article.querySelector("div.mt-5, div.mt-6");
       if (!linkGroup) return;
 
       linkGroup.classList.remove("text-sm");
@@ -126,8 +126,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (isFeatured && links[0]) {
         links[0].className = unifiedButtonClass;
+        const launchLabel = article.dataset.launchLabel || 'Launch';
         links[0].innerHTML =
-          '<i class="fas fa-rocket text-xs"></i> Launch Curriculum Tools';
+          `<i class="fas fa-rocket text-xs"></i> ${launchLabel}`;
       }
     });
   }
