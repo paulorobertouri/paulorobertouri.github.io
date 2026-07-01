@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-.PHONY: help
+.PHONY: help serve
 
 help:
 	@echo "paulorobertouri.github.io"
@@ -9,3 +9,8 @@ help:
 	@echo ""
 	@echo "  Open index.html in a browser, or run a local server:"
 	@echo "    python3 -m http.server 8080"
+	@echo "  Or use the convenience target:"
+	@echo "    make serve"
+
+serve:
+	@python3 -m http.server 8080

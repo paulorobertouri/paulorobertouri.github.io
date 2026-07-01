@@ -4,7 +4,11 @@ Personal portfolio and project showcase website for Paulo R. Pereira Jr.
 
 ## Local Preview
 
-Open `index.html` directly in a browser, or serve this folder with any static file server.
+Open `index.html` directly in a browser, or run `make serve` to start a local static server.
+
+## Repo Guidance
+
+See `AGENTS.md` for the site-specific workflow, preview, and publication rules.
 
 ## Contents
 
